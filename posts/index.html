@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>文章列表 - Leo's 博客</title>
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="post-style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -24,24 +25,26 @@
     </header>
 
     <main>
-        <section class="posts-section" style="margin-top: 60px;">
+        <section class="posts-section">
             <h2>所有文章</h2>
             <div class="posts-grid">
                 <!-- 文章列表 -->
                 <article class="post-card">
-                    <div class="post-image">
-                        <img src="../images/posts/post1/thumbnail.jpg" alt="文章配图">
-                    </div>
-                    <div class="post-content">
-                        <h3>文章标题 1</h3>
-                        <p>文章简介...</p>
-                        <div class="post-meta">
-                            <span><i class="far fa-calendar"></i> 2024-01-01</span>
-                            <span><i class="far fa-eye"></i> 1000</span>
+                    <a href="post1.html" class="post-link">
+                        <div class="post-image">
+                            <img src="../images/posts/post1/cover.jpg" alt="文章配图">
+                            <div class="post-category">技术</div>
                         </div>
-                    </div>
+                        <div class="post-content">
+                            <h3>示例文章标题</h3>
+                            <p>这是一篇示例文章的简介...</p>
+                            <div class="post-meta">
+                                <span><i class="far fa-calendar"></i> 2024-03-20</span>
+                                <span><i class="far fa-eye"></i> 100</span>
+                            </div>
+                        </div>
+                    </a>
                 </article>
-                <!-- 可以添加更多文章 -->
             </div>
         </section>
     </main>
