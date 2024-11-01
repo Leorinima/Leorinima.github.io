@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>视频列表 - 我的博客</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../index.html">返回首页</a>
+            </div>
+            <ul>
+                <li><a href="../index.html#latest-posts">最新文章</a></li>
+                <li><a href="../index.html#latest-videos">最新视频</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="videos-page">
+        <h1 class="page-title">所有视频</h1>
+
+        <!-- 视频列表 -->
+        <div class="videos-grid">
+            <!-- 视频1 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="//player.bilibili.com/player.html?bvid=视频ID1" 
+                            scrolling="no" 
+                            border="0" 
+                            frameborder="no" 
+                            framespacing="0" 
+                            allowfullscreen="true"> 
+                    </iframe>
+                </div>
+                <div class="video-info">
+                    <h3>视频标题1</h3>
+                    <div class="video-meta">
+                        <span><i class="far fa-calendar"></i> 2024-03-20</span>
+                        <span><i class="far fa-play-circle"></i> 分类</span>
+                    </div>
+                    <p>视频描述...</p>
+                </div>
+            </div>
+
+            <!-- 视频2 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="//player.bilibili.com/player.html?bvid=视频ID2" 
+                            scrolling="no" 
+                            border="0" 
+                            frameborder="no" 
+                            framespacing="0" 
+                            allowfullscreen="true"> 
+                    </iframe>
+                </div>
+                <div class="video-info">
+                    <h3>视频标题2</h3>
+                    <div class="video-meta">
+                        <span><i class="far fa-calendar"></i> 2024-03-21</span>
+                        <span><i class="far fa-play-circle"></i> 分类</span>
+                    </div>
+                    <p>视频描述...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 分页 -->
+        <div class="pagination">
+            <a href="#" class="page-btn disabled">&laquo; 上一页</a>
+            <span class="page-number active">1</span>
+            <a href="#" class="page-number">2</a>
+            <a href="#" class="page-btn">下一页 &raquo;</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2024 我的博客. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
