@@ -15,15 +15,18 @@
             </div>
             <ul>
                 <li><a href="#home">首页</a></li>
-                <li><a href="#blog">博客文章</a></li>
+                <li><a href="#latest-posts">最新文章</a></li>
+                <li><a href="#latest-videos">最新视频</a></li>
+                <li><a href="#contact">联系方式</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
+        <!-- 首页欢迎区 -->
         <section id="home" class="hero">
             <div class="hero-content">
-                <img src="your_avatar.jpg" alt="个人头像" class="avatar">
+                <img src="images/avatar.jpg" alt="个人头像" class="avatar">
                 <h1>你好，我是小明</h1>
                 <p>技术博主 | 开源爱好者</p>
                 <div class="social-links">
@@ -32,24 +35,72 @@
             </div>
         </section>
 
-        <section id="blog" class="blog-section">
+        <!-- 最新文章区域 -->
+        <section id="latest-posts" class="posts-section">
             <h2>最新文章</h2>
-            <div class="blog-grid">
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <img src="your_image1.jpg" alt="文章配图">
+            <div class="posts-grid">
+                <!-- 文章卡片示例 -->
+                <article class="post-card">
+                    <div class="post-image">
+                        <img src="images/posts/post1/cover.jpg" alt="文章封面">
                     </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
+                    <div class="post-content">
+                        <div class="post-meta">
                             <span><i class="far fa-calendar"></i> 2024-03-20</span>
-                            <span><i class="far fa-folder"></i> 技术</span>
                         </div>
-                        <h3>文章标题1</h3>
-                        <p>这里是文章摘要，简短介绍文章的主要内容...</p>
-                        <a href="#" class="read-more">阅读更多</a>
+                        <h3>文章标题</h3>
+                        <p>文章摘要...</p>
+                        <a href="posts/post1.html" class="read-more">阅读更多</a>
                     </div>
                 </article>
-                <!-- 可以复制这个 article 块来添加更多文章 -->
+                <!-- 可以继续添加更多文章卡片 -->
+            </div>
+            <div class="view-all">
+                <a href="posts/index.html" class="btn">查看所有文章</a>
+            </div>
+        </section>
+
+        <!-- 最新视频区域 -->
+        <section id="latest-videos" class="videos-section">
+            <h2>最新视频</h2>
+            <div class="videos-grid">
+                <!-- B站视频嵌入示例 -->
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="//player.bilibili.com/player.html?bvid=你的视频ID" 
+                                scrolling="no" 
+                                border="0" 
+                                frameborder="no" 
+                                framespacing="0" 
+                                allowfullscreen="true"> 
+                        </iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>视频标题</h3>
+                        <p>视频描述...</p>
+                    </div>
+                </div>
+                <!-- 可以继续添加更多视频卡片 -->
+            </div>
+            <div class="view-all">
+                <a href="videos/index.html" class="btn">查看所有视频</a>
+            </div>
+        </section>
+
+        <!-- 联系方式 -->
+        <section id="contact" class="contact-section">
+            <h2>联系我</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>email@example.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-weixin"></i>
+                        <p>WeChat_ID</p>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
