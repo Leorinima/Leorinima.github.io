@@ -107,75 +107,153 @@ nav a {
 
 /* 太阳系 */
 /* 太阳系调整 */
+/* 太阳系整体调整 */
 .solar-system {
     position: absolute;
     width: 100%;
     height: 100%;
-    transform: scale(0.35); /* 调整缩放比例 */
-    left: -25%;
-    top: -20%;
+    transform: scale(0.45); /* 增加整体缩放比例 */
+    left: -20%;
+    top: -15%;
 }
 
-/* 轨道调整 */
+/* 太阳放大 */
+.sun {
+    width: 80px;  /* 放大太阳 */
+    height: 80px;
+    background: radial-gradient(circle at center,
+        #fff 0%,
+        #ffd200 20%,
+        #f7971e 40%,
+        #ff4e50 100%
+    );
+    box-shadow: 
+        0 0 80px #ff4e50,
+        0 0 40px #ff4e50,
+        0 0 20px #ff4e50;
+}
+
+/* 轨道和行星尺寸调整 */
 .mercury-orbit { 
-    width: 120px; 
-    height: 120px; 
+    width: 160px; 
+    height: 160px; 
     animation: orbit 3s linear infinite; 
 }
 .venus-orbit { 
-    width: 180px; 
-    height: 180px; 
+    width: 240px; 
+    height: 240px; 
     animation: orbit 5s linear infinite; 
 }
 .earth-orbit { 
-    width: 240px; 
-    height: 240px; 
+    width: 320px; 
+    height: 320px; 
     animation: orbit 8s linear infinite; 
 }
 .mars-orbit { 
-    width: 300px; 
-    height: 300px; 
+    width: 400px; 
+    height: 400px; 
     animation: orbit 12s linear infinite; 
 }
 .jupiter-orbit { 
-    width: 400px; 
-    height: 400px; 
+    width: 520px; 
+    height: 520px; 
     animation: orbit 20s linear infinite; 
 }
 .saturn-orbit { 
-    width: 500px; 
-    height: 500px; 
+    width: 640px; 
+    height: 640px; 
     animation: orbit 30s linear infinite; 
 }
 
-/* 行星大小微调 */
-.mercury { width: 8px; height: 8px; }
-.venus { width: 12px; height: 12px; }
-.earth { width: 13px; height: 13px; }
-.mars { width: 11px; height: 11px; }
-.jupiter { width: 35px; height: 35px; }
-.saturn { width: 30px; height: 30px; }
+/* 行星尺寸放大 */
+.mercury {
+    width: 15px;
+    height: 15px;
+    background: linear-gradient(45deg, #727272, #a8a8a8);
+}
 
-/* 调整土星环大小 */
+.venus {
+    width: 22px;
+    height: 22px;
+    background: linear-gradient(45deg, #e6b980, #eacda3);
+}
+
+.earth {
+    width: 25px;
+    height: 25px;
+    background: radial-gradient(circle at 30% 30%,
+        #4b9fe1 0%,
+        #1a4e95 50%,
+        #0a2d5c 100%
+    );
+}
+
+.mars {
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(45deg, #c1440e, #d36f39);
+}
+
+.jupiter {
+    width: 55px;
+    height: 55px;
+    background: linear-gradient(
+        to bottom,
+        #c1440e 0%,
+        #d36f39 20%,
+        #bf8456 40%,
+        #d36f39 60%,
+        #c1440e 100%
+    );
+}
+
+.saturn {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(45deg, #e6c588, #b69c6f);
+}
+
+/* 土星环放大 */
 .saturn-rings {
-    width: 180%;
-    height: 4px;
+    width: 200%;
+    height: 6px;  /* 增加环的厚度 */
+    background: linear-gradient(
+        90deg,
+        rgba(230, 197, 136, 0),
+        rgba(230, 197, 136, 0.5) 15%,
+        rgba(230, 197, 136, 0.5) 85%,
+        rgba(230, 197, 136, 0)
+    );
+    box-shadow: 
+        0 1.5px 0 rgba(230, 197, 136, 0.3),
+        0 -1.5px 0 rgba(230, 197, 136, 0.3);
+}
+
+/* 木星条纹调整 */
+.jupiter-bands {
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 6px,
+        rgba(255, 255, 255, 0.1) 6px,
+        rgba(255, 255, 255, 0.1) 12px
+    );
 }
 
 /* 调整内容位置 */
 .hero-content {
-    margin-left: 250px; /* 为太阳系留出更多空间 */
+    margin-left: 300px;  /* 为更大的太阳系留出空间 */
 }
 
 /* 响应式调整 */
 @media (max-width: 768px) {
     .solar-system {
-        transform: scale(0.25);
-        left: -35%;
+        transform: scale(0.35);
+        left: -30%;
     }
     
     .hero-content {
-        margin-left: 150px;
+        margin-left: 180px;
     }
 }
 /* 文章卡片样式 */
