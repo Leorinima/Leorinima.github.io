@@ -266,6 +266,20 @@ footer {
     color: var(--white);
     padding: 1rem;
     text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-bottom {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+
+.footer-bottom p {
+    font-size: 0.9rem;
+    opacity: 0.8;
 }
 
 /* 文章列表页样式 */
