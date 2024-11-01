@@ -18,19 +18,11 @@
 body {
     font-family: 'Microsoft YaHei', sans-serif;
     line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--light-gray);
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
 }
 
 /* 导航栏样式 */
 header {
-    background-color: var(--white);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background-color: rgba(255, 255, 255, 0.9);
     position: fixed;
     width: 100%;
     top: 0;
@@ -40,15 +32,10 @@ header {
 nav {
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: 1rem;
+    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.logo h1 {
-    font-size: 1.5rem;
-    color: var(--primary-color);
 }
 
 nav ul {
@@ -58,37 +45,20 @@ nav ul {
 }
 
 nav a {
+    text-decoration: none;
     color: var(--text-color);
-    transition: color 0.3s;
 }
 
-nav a:hover {
-    color: var(--primary-color);
-}
-
-/* 主要内容区域 */
-main {
-    margin-top: 60px;
-    min-height: calc(100vh - 120px);
-}
-
-section {
-    padding: 4rem 2rem;
-    max-width: var(--max-width);
-    margin: 0 auto;
-}
-
-/* 首页英雄区 */
-/* 太空背景 */
+/* 英雄区样式 */
 .hero {
     position: relative;
     background: linear-gradient(45deg, #0B0B2B, #1B1B3A);
-    color: var(--white);
-    text-align: center;
-    padding: 6rem 2rem;
-    margin-top: 0;
-    overflow: hidden;
     min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding-top: 60px;
 }
 
 .space-background {
@@ -106,7 +76,6 @@ section {
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
-/* 第一个行星 - 类似土星 */
 .planet-1 {
     width: 100px;
     height: 100px;
@@ -128,7 +97,6 @@ section {
     border-radius: 50%;
 }
 
-/* 第二个行星 - 蓝色星球 */
 .planet-2 {
     width: 60px;
     height: 60px;
@@ -138,7 +106,6 @@ section {
     animation: orbit2 15s linear infinite;
 }
 
-/* 第三个行星 - 红色星球 */
 .planet-3 {
     width: 40px;
     height: 40px;
@@ -148,7 +115,6 @@ section {
     animation: orbit3 25s linear infinite;
 }
 
-/* 流星效果 */
 .shooting-star {
     position: absolute;
     width: 100px;
@@ -159,41 +125,28 @@ section {
     left: -100px;
 }
 
-/* 行星轨道动画 */
+/* 动画定义 */
 @keyframes orbit1 {
-    0% {
-        transform: rotate(0) translateX(100px) rotate(0);
-    }
-    100% {
-        transform: rotate(360deg) translateX(100px) rotate(-360deg);
-    }
+    from { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
 }
 
 @keyframes orbit2 {
-    0% {
-        transform: rotate(0) translateX(150px) rotate(0);
-    }
-    100% {
-        transform: rotate(-360deg) translateX(150px) rotate(360deg);
-    }
+    from { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+    to   { transform: rotate(-360deg) translateX(150px) rotate(360deg); }
 }
 
 @keyframes orbit3 {
-    0% {
-        transform: rotate(0) translateX(120px) rotate(0);
-    }
-    100% {
-        transform: rotate(360deg) translateX(120px) rotate(-360deg);
-    }
+    from { transform: rotate(0deg) translateX(120px) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(120px) rotate(-360deg); }
 }
 
-/* 流星动画 */
 @keyframes shooting {
-    0% {
+    from {
         transform: translateX(0) translateY(0) rotate(45deg);
         opacity: 1;
     }
-    100% {
+    to {
         transform: translateX(1000px) translateY(1000px) rotate(45deg);
         opacity: 0;
     }
@@ -203,6 +156,8 @@ section {
 .hero-content {
     position: relative;
     z-index: 1;
+    text-align: center;
+    color: var(--white);
 }
 
 .avatar {
@@ -212,7 +167,6 @@ section {
     border: 3px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
     margin-bottom: 2rem;
-    position: relative;
 }
 
 .hero h1 {
@@ -227,24 +181,13 @@ section {
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
 }
 
-/* 添加一些星星点缀 */
-.space-background::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: 
-        radial-gradient(1px 1px at 20px 30px, #fff, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 40px 70px, #fff, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 50px 160px, #fff, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 90px 40px, #fff, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 130px 80px, #fff, rgba(0,0,0,0));
-    background-repeat: repeat;
-    background-size: 200px 200px;
-    opacity: 0.3;
+/* 文章区域样式 */
+.posts-section, .videos-section {
+    padding: 4rem 2rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
 }
 
-/* 文章卡片样式 */
 .posts-grid, .videos-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -252,132 +195,10 @@ section {
     margin-top: 2rem;
 }
 
-.post-card {
-    background: var(--white);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
-}
-
-.post-card:hover {
-    transform: translateY(-5px);
-}
-
-.post-image {
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-}
-
-.post-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.post-content {
-    padding: 1.5rem;
-}
-
-.post-meta {
-    font-size: 0.9rem;
-    color: var(--dark-gray);
-    margin-bottom: 1rem;
-}
-
-.post-meta span {
-    margin-right: 1rem;
-}
-
-.post-meta i {
-    margin-right: 0.5rem;
-}
-
-/* 视频卡片样式 */
-.video-card {
-    background: var(--white);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.video-container {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-}
-
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.video-info {
-    padding: 1.5rem;
-}
-
-/* 按钮样式 */
-.btn {
-    display: inline-block;
-    padding: 0.8rem 1.5rem;
-    background-color: var(--primary-color);
-    color: var(--white);
-    border-radius: 4px;
-    transition: background-color 0.3s;
-}
-
-.btn:hover {
-    background-color: #2980b9;
-}
-
-.view-all {
-    text-align: center;
-    margin-top: 2rem;
-}
-/* 分页样式 */
-.pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-    margin-top: 3rem;
-}
-
-.page-btn, .page-number {
-    padding: 0.5rem 1rem;
-    border: 1px solid var(--primary-color);
-    border-radius: 4px;
-    color: var(--primary-color);
-    transition: all 0.3s;
-}
-
-.page-number.active {
-    background-color: var(--primary-color);
-    color: var(--white);
-}
-
-.page-btn:hover, .page-number:hover {
-    background-color: var(--primary-color);
-    color: var(--white);
-}
-
-.page-btn.disabled {
-    border-color: var(--dark-gray);
-    color: var(--dark-gray);
-    pointer-events: none;
-}
-
 /* 联系方式样式 */
 .contact-section {
     background-color: var(--white);
-    border-radius: 8px;
-    margin: 2rem auto;
-    padding: 3rem 2rem;
+    padding: 4rem 2rem;
 }
 
 .contact-content {
@@ -389,7 +210,6 @@ section {
     display: flex;
     justify-content: center;
     gap: 3rem;
-    margin-top: 2rem;
 }
 
 .contact-item {
@@ -398,107 +218,12 @@ section {
     gap: 1rem;
 }
 
-.contact-item i {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-}
-
 /* 页脚样式 */
 footer {
     background-color: var(--secondary-color);
     color: var(--white);
     padding: 1rem;
     text-align: center;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
-.footer-bottom {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 1rem 0;
-}
-
-.footer-bottom p {
-    font-size: 0.9rem;
-    opacity: 0.8;
-}
-
-/* 文章列表页样式 */
-.posts-page, .videos-page {
-    max-width: var(--max-width);
-    margin: 80px auto 2rem;
-    padding: 0 2rem;
-}
-
-.page-title {
-    text-align: center;
-    color: var(--secondary-color);
-    margin-bottom: 2rem;
-}
-
-.posts-filter {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
-}
-
-.filter-btn {
-    padding: 0.5rem 1.5rem;
-    border: 1px solid var(--primary-color);
-    border-radius: 20px;
-    background: none;
-    color: var(--primary-color);
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.filter-btn.active, .filter-btn:hover {
-    background-color: var(--primary-color);
-    color: var(--white);
-}
-
-/* 文章列表样式 */
-.post-item {
-    background: var(--white);
-    border-radius: 8px;
-    overflow: hidden;
-    margin-bottom: 2rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    display: flex;
-}
-
-.post-item .post-image {
-    width: 300px;
-    height: auto;
-}
-
-.post-item .post-content {
-    flex: 1;
-    padding: 2rem;
-}
-
-.post-excerpt {
-    color: var(--dark-gray);
-    margin: 1rem 0;
-}
-
-/* 动画效果 */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.post-card, .video-card, .post-item {
-    animation: fadeIn 0.5s ease-out;
 }
 
 /* 响应式设计 */
@@ -515,88 +240,8 @@ footer {
         margin-top: 1rem;
     }
 
-    .post-item {
-        flex-direction: column;
-    }
-
-    .post-item .post-image {
-        width: 100%;
-        height: 200px;
-    }
-
     .contact-info {
         flex-direction: column;
         align-items: center;
-        gap: 1.5rem;
     }
-
-    .posts-filter {
-        flex-wrap: wrap;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero {
-        padding: 4rem 1rem;
-    }
-
-    .avatar {
-        width: 120px;
-        height: 120px;
-    }
-
-    .post-content, .video-info {
-        padding: 1rem;
-    }
-
-    .page-title {
-        font-size: 1.5rem;
-    }
-}
-
-/* 滚动条美化 */
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--primary-color);
-    border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #2980b9;
-}
-
-/* 社交链接样式 */
-.social-links {
-    margin-top: 2rem;
-}
-
-.social-links a {
-    color: var(--white);
-    font-size: 1.5rem;
-    margin: 0 1rem;
-    transition: transform 0.3s;
-}
-
-.social-links a:hover {
-    transform: translateY(-3px);
-}
-
-/* 通用工具类 */
-.text-center {
-    text-align: center;
-}
-
-.mt-2 {
-    margin-top: 2rem;
-}
-
-.mb-2 {
-    margin-bottom: 2rem;
 }
