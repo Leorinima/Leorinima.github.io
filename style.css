@@ -23,12 +23,15 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     overflow-x: hidden;
+    background: #1B2735; /* 添加这行 */
+    margin: 0;           /* 添加这行 */
+    padding: 0;
 }
 
 /* 导航栏样式 */
 header {
-    background-color: rgba(0, 0, 0, 0.9);
-    position: fixed;
+    background: transparent;  /* 改为transparent，原来是rgba(0, 0, 0, 0.9) */
+    position: absolute;
     width: 100%;
     top: 0;
     z-index: 1000;
@@ -68,11 +71,12 @@ nav a:hover {
 
 /* 英雄区样式 */
 .hero {
-    height: 50vh;
-    background: #000;
+    height: 100vh;
+    width: 100vw;        /* 添加这行 */
+    background: none;
     position: relative;
     overflow: hidden;
-    margin-top: var(--header-height);
+    margin: 0;           /* 改为0，删除margin-top */
 }
 
 /* 太空背景 */
@@ -80,6 +84,8 @@ nav a:hover {
     position: absolute;
     width: 100%;
     height: 100%;
+    top: 0;             /* 添加这行 */
+    left: 0;            /* 添加这行 */
     background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
 }
 
@@ -125,8 +131,8 @@ nav a:hover {
     width: 100%;
     height: 100%;
     transform: scale(0.5);
-    left: 0;
-    top: 0;
+    left: -5%;
+    top: -5%;
 }
 
 /* 太阳 */
@@ -141,7 +147,7 @@ nav a:hover {
         #ff4e50 100%
     );
     border-radius: 50%;
-    left: 20%;
+    left: 25%;
     top: 50%;
     transform: translate(-50%, -50%);
     box-shadow: 
@@ -156,7 +162,7 @@ nav a:hover {
     position: absolute;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 50%;
-    left: 20%;
+    left: 25%;
     top: 50%;
     transform: translate(-50%, -50%);
 }
@@ -560,7 +566,8 @@ footer {
 @media (max-width: 1200px) {
     .solar-system {
         transform: scale(0.4);
-        left: -10%;
+        left: -15%;    /* 改为-15%，原来是-20% */
+        top: -15%;     /* 添加这行 */
     }
 
     .hero-content {
@@ -635,7 +642,8 @@ footer {
 
     .solar-system {
         transform: scale(0.25);
-        left: -30%;
+        left: -25%;
+        top: -25%;     /* 添加这行 */
     }
 
     nav ul {
