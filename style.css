@@ -79,52 +79,132 @@ section {
 }
 
 /* 首页英雄区 */
-/* 添加星空效果 */
+/* 太空背景 */
 .hero {
     position: relative;
-    background: linear-gradient(45deg, #1a1b26, #24283b);
+    background: linear-gradient(45deg, #0B0B2B, #1B1B3A);
     color: var(--white);
     text-align: center;
     padding: 6rem 2rem;
     margin-top: 0;
     overflow: hidden;
+    min-height: 100vh;
 }
 
-.stars {
+.space-background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none;
-    background-image: 
-        radial-gradient(2px 2px at 20px 30px, #fff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 50px 160px, #fff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 160px 120px, #fff, rgba(0,0,0,0));
-    background-repeat: repeat;
-    background-size: 200px 200px;
-    animation: stars 4s linear infinite;
-    opacity: 0.5;
 }
 
-@keyframes stars {
+/* 行星样式 */
+.planet {
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+/* 第一个行星 - 类似土星 */
+.planet-1 {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(45deg, #FFB347, #FFCC33);
+    top: 20%;
+    left: 10%;
+    animation: orbit1 20s linear infinite;
+}
+
+.planet-1::after {
+    content: '';
+    position: absolute;
+    width: 140px;
+    height: 20px;
+    background: rgba(255, 204, 51, 0.3);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(30deg);
+    border-radius: 50%;
+}
+
+/* 第二个行星 - 蓝色星球 */
+.planet-2 {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, #4CA1AF, #2C3E50);
+    top: 60%;
+    right: 15%;
+    animation: orbit2 15s linear infinite;
+}
+
+/* 第三个行星 - 红色星球 */
+.planet-3 {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(45deg, #FF416C, #FF4B2B);
+    top: 30%;
+    right: 30%;
+    animation: orbit3 25s linear infinite;
+}
+
+/* 流星效果 */
+.shooting-star {
+    position: absolute;
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, #ffffff, transparent);
+    animation: shooting 3s linear infinite;
+    top: 20%;
+    left: -100px;
+}
+
+/* 行星轨道动画 */
+@keyframes orbit1 {
     0% {
-        transform: translateY(0);
+        transform: rotate(0) translateX(100px) rotate(0);
     }
     100% {
-        transform: translateY(-200px);
+        transform: rotate(360deg) translateX(100px) rotate(-360deg);
     }
 }
 
+@keyframes orbit2 {
+    0% {
+        transform: rotate(0) translateX(150px) rotate(0);
+    }
+    100% {
+        transform: rotate(-360deg) translateX(150px) rotate(360deg);
+    }
+}
+
+@keyframes orbit3 {
+    0% {
+        transform: rotate(0) translateX(120px) rotate(0);
+    }
+    100% {
+        transform: rotate(360deg) translateX(120px) rotate(-360deg);
+    }
+}
+
+/* 流星动画 */
+@keyframes shooting {
+    0% {
+        transform: translateX(0) translateY(0) rotate(45deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(1000px) translateY(1000px) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+/* 内容样式 */
 .hero-content {
     position: relative;
     z-index: 1;
 }
 
-/* 调整头像样式 */
 .avatar {
     width: 150px;
     height: 150px;
@@ -132,9 +212,9 @@ section {
     border: 3px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
     margin-bottom: 2rem;
+    position: relative;
 }
 
-/* 调整文字样式 */
 .hero h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
@@ -145,6 +225,23 @@ section {
     font-size: 1.2rem;
     opacity: 0.9;
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+/* 添加一些星星点缀 */
+.space-background::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(1px 1px at 20px 30px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 40px 70px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 50px 160px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 90px 40px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 130px 80px, #fff, rgba(0,0,0,0));
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    opacity: 0.3;
 }
 
 /* 文章卡片样式 */
