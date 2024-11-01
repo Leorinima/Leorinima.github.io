@@ -5,6 +5,7 @@
     --text-color: #333;
     --white: #fff;
     --max-width: 1200px;
+    --header-height: 60px;
 }
 
 * {
@@ -13,31 +14,40 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Microsoft YaHei', sans-serif;
     line-height: 1.6;
+    color: var(--text-color);
+    overflow-x: hidden;
 }
 
-/* 导航栏 */
+/* 导航栏样式 */
 header {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.9);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
+    height: var(--header-height);
 }
 
 nav {
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: 1rem 2rem;
+    padding: 0 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 100%;
 }
 
 nav .logo h1 {
     color: var(--white);
+    font-size: 1.5rem;
 }
 
 nav ul {
@@ -49,98 +59,40 @@ nav ul {
 nav a {
     color: var(--white);
     text-decoration: none;
+    transition: color 0.3s;
 }
 
-/* 主页英雄区 */
+nav a:hover {
+    color: var(--primary-color);
+}
+
+/* 英雄区样式 */
 .hero {
-    min-height: 100vh;
+    height: 50vh;
     background: #000;
     position: relative;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 60px;
+    margin-top: var(--header-height);
 }
 
 /* 太空背景 */
 .space-background {
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
 }
 
-/* 太阳 */
-.sun {
-    position: absolute;
-    width: 120px;
-    height: 120px;
-    background: radial-gradient(circle at center, #ffd200, #f7971e);
-    border-radius: 50%;
-    top: 20%;
-    left: 20%;
-    box-shadow: 0 0 60px #ff4e50;
-    animation: glow 4s ease-in-out infinite alternate;
-}
-
-/* 行星 */
-.planet {
-    position: absolute;
-    border-radius: 50%;
-}
-
-.mercury {
-    width: 30px;
-    height: 30px;
-    background: linear-gradient(45deg, #727272, #a8a8a8);
-    top: 30%;
-    left: 35%;
-    animation: orbit 12s linear infinite;
-}
-
-.earth {
-    width: 50px;
-    height: 50px;
-    background: radial-gradient(circle at 30% 30%, #4b9fe1, #0a2d5c);
-    top: 45%;
-    left: 45%;
-    animation: orbit 20s linear infinite;
-}
-
-.jupiter {
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(45deg, #c1440e, #d36f39);
-    top: 60%;
-    left: 55%;
-    animation: orbit 30s linear infinite;
-}
-
-.saturn {
-    width: 70px;
-    height: 70px;
-    background: linear-gradient(45deg, #e6c588, #b69c6f);
-    top: 25%;
-    right: 25%;
-    animation: orbit 40s linear infinite;
-}
-
-.saturn-rings {
-    position: absolute;
-    width: 140%;
-    height: 20px;
-    background: rgba(230, 197, 136, 0.3);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(20deg);
-    border-radius: 50%;
-}
-
-/* 星星背景 */
+/* 星星效果 */
 .stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.stars::before,
+.stars::after {
+    content: '';
     position: absolute;
     width: 100%;
     height: 100%;
@@ -148,82 +100,571 @@ nav a {
         radial-gradient(2px 2px at 20px 30px, #fff, rgba(0,0,0,0)),
         radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
         radial-gradient(2px 2px at 50px 160px, #fff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0));
+        radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 160px 120px, #fff, rgba(0,0,0,0));
     background-repeat: repeat;
     background-size: 200px 200px;
     animation: twinkle 4s ease-in-out infinite;
 }
 
-/* 动画定义 */
-@keyframes orbit {
-    from { transform: rotate(0deg) translateX(200px) rotate(0deg); }
-    to   { transform: rotate(360deg) translateX(200px) rotate(-360deg); }
+.stars::after {
+    background-position: 100px 100px;
+    animation-delay: 2s;
+}
+/* 太阳系容器 */
+.solar-system {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: scale(0.5);
+    left: 0;
+    top: 0;
 }
 
-@keyframes glow {
-    from { box-shadow: 0 0 60px #ff4e50; }
-    to   { box-shadow: 0 0 100px #ff4e50; }
+/* 太阳 */
+.sun {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle at center,
+        #fff 0%,
+        #ffd200 20%,
+        #f7971e 40%,
+        #ff4e50 100%
+    );
+    border-radius: 50%;
+    left: 20%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 
+        0 0 120px #ff4e50,
+        0 0 60px #ff4e50,
+        0 0 30px #ff4e50;
+    animation: sunGlow 4s ease-in-out infinite alternate;
+}
+
+/* 轨道基础样式 */
+.orbit {
+    position: absolute;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    left: 20%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* 各个轨道大小和动画 */
+.mercury-orbit {
+    width: 200px;
+    height: 200px;
+    animation: rotate 4s linear infinite;
+}
+
+.venus-orbit {
+    width: 300px;
+    height: 300px;
+    animation: rotate 6.5s linear infinite;
+}
+
+.earth-orbit {
+    width: 400px;
+    height: 400px;
+    animation: rotate 10s linear infinite;
+}
+
+.mars-orbit {
+    width: 500px;
+    height: 500px;
+    animation: rotate 15s linear infinite;
+}
+
+.jupiter-orbit {
+    width: 650px;
+    height: 650px;
+    animation: rotate 25s linear infinite;
+}
+
+.saturn-orbit {
+    width: 800px;
+    height: 800px;
+    animation: rotate 35s linear infinite;
+}
+
+/* 行星基础样式 */
+.planet {
+    position: absolute;
+    border-radius: 50%;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 各个行星样式 */
+.mercury {
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(45deg, #727272, #a8a8a8);
+}
+
+.venus {
+    width: 35px;
+    height: 35px;
+    background: linear-gradient(45deg, #e6b980, #eacda3);
+}
+
+.earth {
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle at 30% 30%,
+        #4b9fe1 0%,
+        #1a4e95 50%,
+        #0a2d5c 100%
+    );
+}
+
+.mars {
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(45deg, #c1440e, #d36f39);
+}
+
+.jupiter {
+    width: 85px;
+    height: 85px;
+    background: linear-gradient(
+        to bottom,
+        #c1440e 0%,
+        #d36f39 20%,
+        #bf8456 40%,
+        #d36f39 60%,
+        #c1440e 100%
+    );
+    position: relative;
+    overflow: hidden;
+}
+
+.jupiter::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 8px,
+        rgba(255, 255, 255, 0.1) 8px,
+        rgba(255, 255, 255, 0.1) 16px
+    );
+}
+
+.saturn {
+    width: 75px;
+    height: 75px;
+    background: linear-gradient(45deg, #e6c588, #b69c6f);
+    position: relative;
+}
+
+/* 土星环 */
+.rings {
+    position: absolute;
+    width: 200%;
+    height: 10px;
+    background: linear-gradient(
+        90deg,
+        rgba(230, 197, 136, 0),
+        rgba(230, 197, 136, 0.5) 15%,
+        rgba(230, 197, 136, 0.5) 85%,
+        rgba(230, 197, 136, 0)
+    );
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(20deg);
+    border-radius: 50%;
+    box-shadow: 
+        0 2px 0 rgba(230, 197, 136, 0.3),
+        0 -2px 0 rgba(230, 197, 136, 0.3);
+}
+
+/* 动画定义 */
+@keyframes rotate {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
 @keyframes twinkle {
     0%, 100% { opacity: 0.3; }
-    50% { opacity: 0.6; }
+    50% { opacity: 0.8; }
 }
 
-/* 内容区 */
+@keyframes sunGlow {
+    from { box-shadow: 0 0 120px #ff4e50, 0 0 60px #ff4e50, 0 0 30px #ff4e50; }
+    to { box-shadow: 0 0 150px #ff4e50, 0 0 80px #ff4e50, 0 0 40px #ff4e50; }
+}
+/* 英雄区内容 */
 .hero-content {
-    position: relative;
-    z-index: 1;
-    text-align: center;
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
     color: var(--white);
+    text-align: center;
+    z-index: 1;
 }
 
 .hero-content h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 1rem;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    animation: textGlow 2s ease-in-out infinite alternate;
 }
 
 .hero-content p {
-    font-size: 1.2rem;
-    opacity: 0.9;
+    font-size: 1.5rem;
+    opacity: 0.8;
 }
 
-.avatar {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 3px solid rgba(255, 255, 255, 0.3);
-    margin-bottom: 2rem;
-}
-
-/* 其他区域样式 */
-.posts-section, .videos-section, .contact-section {
+/* 通用区域样式 */
+section {
     padding: 4rem 2rem;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--secondary-color);
+}
+
+/* 文章区域 */
+.posts-section {
+    background: #f9f9f9;
     max-width: var(--max-width);
     margin: 0 auto;
 }
 
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.post-card {
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.post-card:hover {
+    transform: translateY(-5px);
+}
+
+.post-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.post-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.post-card:hover .post-image img {
+    transform: scale(1.1);
+}
+
+.post-content {
+    padding: 1.5rem;
+}
+
+.post-content h3 {
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.post-meta {
+    display: flex;
+    gap: 1rem;
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+.post-meta i {
+    margin-right: 0.5rem;
+}
+
+/* 视频区域 */
+.videos-section {
+    background: var(--white);
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.videos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.video-card {
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+}
+
+.video-thumbnail {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.video-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1.5rem;
+    transition: background 0.3s;
+}
+
+.video-card:hover .play-button {
+    background: var(--primary-color);
+}
+
+.video-info {
+    padding: 1.5rem;
+}
+
+.video-info h3 {
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+/* 查看全部按钮 */
+.view-all {
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: var(--primary-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #2980b9;
+}
+/* 联系方式区域 */
+.contact-section {
+    background: #f9f9f9;
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.contact-content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 2rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+}
+
+.contact-item i {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.contact-item p {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+}
+
 /* 页脚 */
 footer {
-    background-color: var(--secondary-color);
+    background: var(--secondary-color);
     color: var(--white);
     text-align: center;
-    padding: 1rem;
+    padding: 2rem;
+}
+
+.footer-bottom {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    opacity: 0.8;
+}
+
+/* 动画效果 */
+@keyframes textGlow {
+    from { text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
+    to { text-shadow: 0 0 20px rgba(255, 255, 255, 0.8); }
 }
 
 /* 响应式设计 */
+@media (max-width: 1200px) {
+    .solar-system {
+        transform: scale(0.4);
+        left: -10%;
+    }
+
+    .hero-content {
+        right: 5%;
+    }
+}
+
 @media (max-width: 768px) {
+    /* 导航栏响应式 */
     nav {
-        flex-direction: column;
-        padding: 1rem;
+        padding: 0 1rem;
     }
-    
+
+    nav .logo h1 {
+        font-size: 1.2rem;
+    }
+
     nav ul {
-        margin-top: 1rem;
+        gap: 1rem;
     }
-    
+
+    /* 英雄区响应式 */
+    .solar-system {
+        transform: scale(0.3);
+        left: -20%;
+    }
+
+    .hero-content {
+        right: 50%;
+        transform: translate(50%, -50%);
+        width: 90%;
+    }
+
     .hero-content h1 {
         font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    /* 文章和视频网格响应式 */
+    .posts-grid,
+    .videos-grid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+
+    /* 联系方式响应式 */
+    .contact-info {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .contact-item {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* 区域标题响应式 */
+    section h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* 超小屏幕适配 */
+    .hero {
+        height: 60vh;
+    }
+
+    .solar-system {
+        transform: scale(0.25);
+        left: -30%;
+    }
+
+    nav ul {
+        display: none; /* 可以添加汉堡菜单替代 */
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .post-card,
+    .video-card {
+        margin: 0 1rem;
+    }
+
+    .btn {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* 打印样式 */
+@media print {
+    .hero,
+    .videos-section,
+    nav,
+    footer {
+        display: none;
+    }
+
+    .posts-section {
+        padding: 0;
+    }
+
+    .post-card {
+        break-inside: avoid;
+        box-shadow: none;
     }
 }
