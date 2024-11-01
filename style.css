@@ -23,15 +23,13 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     overflow-x: hidden;
-    background: #1B2735; /* 添加这行 */
-    margin: 0;           /* 添加这行 */
-    padding: 0;
+    background: #1B2735; /* 添加背景色 */
 }
 
 /* 导航栏样式 */
 header {
-    background: transparent;  /* 改为transparent，原来是rgba(0, 0, 0, 0.9) */
-    position: absolute;
+    background-color: transparent; /* 改为transparent */
+    position: absolute; /* 改为absolute */
     width: 100%;
     top: 0;
     z-index: 1000;
@@ -71,12 +69,10 @@ nav a:hover {
 
 /* 英雄区样式 */
 .hero {
-    height: 100vh;
-    width: 100vw;        /* 添加这行 */
-    background: none;
+    height: 100vh; /* 改为100vh */
+    width: 100vw; /* 添加这行 */
     position: relative;
     overflow: hidden;
-    margin: 0;           /* 改为0，删除margin-top */
 }
 
 /* 太空背景 */
@@ -84,9 +80,9 @@ nav a:hover {
     position: absolute;
     width: 100%;
     height: 100%;
-    top: 0;             /* 添加这行 */
-    left: 0;            /* 添加这行 */
-    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+    top: 0;
+    left: 0;
+    background: radial-gradient(ellipse at center, #1B2735 0%, #090A0F 100%);
 }
 
 /* 星星效果 */
@@ -108,8 +104,7 @@ nav a:hover {
         radial-gradient(2px 2px at 50px 160px, #fff, rgba(0,0,0,0)),
         radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
         radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 160px 120px, #fff, rgba(0,0,0,0));
-        /* 添加更多星星 */
+        radial-gradient(2px 2px at 160px 120px, #fff, rgba(0,0,0,0)),
         radial-gradient(2px 2px at 170px 90px, #fff, rgba(0,0,0,0)),
         radial-gradient(2px 2px at 150px 230px, #fff, rgba(0,0,0,0)),
         radial-gradient(2px 2px at 200px 190px, #fff, rgba(0,0,0,0)),
@@ -125,14 +120,15 @@ nav a:hover {
     background-position: 150px 150px;
     animation-delay: 2s;
 }
+
 /* 太阳系容器 */
 .solar-system {
     position: absolute;
     width: 100%;
     height: 100%;
     transform: scale(0.5);
-    left: -5%;
-    top: -5%;
+    left: -5%; /* 调整位置 */
+    top: -5%;  /* 调整位置 */
 }
 
 /* 太阳 */
@@ -147,7 +143,7 @@ nav a:hover {
         #ff4e50 100%
     );
     border-radius: 50%;
-    left: 25%;
+    left: 25%; /* 调整位置 */
     top: 50%;
     transform: translate(-50%, -50%);
     box-shadow: 
@@ -162,7 +158,7 @@ nav a:hover {
     position: absolute;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 50%;
-    left: 25%;
+    left: 25%; /* 调整位置 */
     top: 50%;
     transform: translate(-50%, -50%);
 }
@@ -314,6 +310,7 @@ nav a:hover {
     from { box-shadow: 0 0 120px #ff4e50, 0 0 60px #ff4e50, 0 0 30px #ff4e50; }
     to { box-shadow: 0 0 150px #ff4e50, 0 0 80px #ff4e50, 0 0 40px #ff4e50; }
 }
+
 /* 英雄区内容 */
 .hero-content {
     position: absolute;
@@ -337,349 +334,19 @@ nav a:hover {
     opacity: 0.8;
 }
 
-/* 通用区域样式 */
-section {
-    padding: 4rem 2rem;
-}
-
-section h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    color: var(--secondary-color);
-}
-
-/* 文章区域 */
-.posts-section {
-    background: #f9f9f9;
-    max-width: var(--max-width);
-    margin: 0 auto;
-}
-
-.posts-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-bottom: 2rem;
-}
-
-.post-card {
-    background: var(--white);
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-}
-
-.post-card:hover {
-    transform: translateY(-5px);
-}
-
-.post-image {
-    height: 200px;
-    overflow: hidden;
-}
-
-.post-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s;
-}
-
-.post-card:hover .post-image img {
-    transform: scale(1.1);
-}
-
-.post-content {
-    padding: 1.5rem;
-}
-
-.post-content h3 {
-    margin-bottom: 1rem;
-    color: var(--secondary-color);
-}
-
-.post-meta {
-    display: flex;
-    gap: 1rem;
-    color: #666;
-    font-size: 0.9rem;
-    margin-top: 1rem;
-}
-
-.post-meta i {
-    margin-right: 0.5rem;
-}
-
-/* 视频区域 */
-.videos-section {
-    background: var(--white);
-    max-width: var(--max-width);
-    margin: 0 auto;
-}
-
-.videos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-bottom: 2rem;
-}
-
-.video-card {
-    background: var(--white);
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-}
-
-.video-card:hover {
-    transform: translateY(-5px);
-}
-
-.video-thumbnail {
-    position: relative;
-    height: 200px;
-    overflow: hidden;
-}
-
-.video-thumbnail img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.play-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 60px;
-    height: 60px;
-    background: rgba(0, 0, 0, 0.7);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--white);
-    font-size: 1.5rem;
-    transition: background 0.3s;
-}
-
-.video-card:hover .play-button {
-    background: var(--primary-color);
-}
-
-.video-info {
-    padding: 1.5rem;
-}
-
-.video-info h3 {
-    margin-bottom: 1rem;
-    color: var(--secondary-color);
-}
-
-/* 查看全部按钮 */
-.view-all {
-    text-align: center;
-}
-
-.btn {
-    display: inline-block;
-    padding: 0.8rem 2rem;
-    background: var(--primary-color);
-    color: var(--white);
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s;
-}
-
-.btn:hover {
-    background: #2980b9;
-}
-/* 联系方式区域 */
-.contact-section {
-    background: #f9f9f9;
-    text-align: center;
-    padding: 4rem 2rem;
-}
-
-.contact-content {
-    max-width: var(--max-width);
-    margin: 0 auto;
-}
-
-.contact-info {
-    display: flex;
-    justify-content: center;
-    gap: 4rem;
-    margin-top: 2rem;
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem 2rem;
-    background: var(--white);
-    border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-}
-
-.contact-item:hover {
-    transform: translateY(-5px);
-}
-
-.contact-item i {
-    font-size: 2rem;
-    color: var(--primary-color);
-}
-
-.contact-item p {
-    font-size: 1.1rem;
-    color: var(--secondary-color);
-}
-
-/* 页脚 */
-footer {
-    background: var(--secondary-color);
-    color: var(--white);
-    text-align: center;
-    padding: 2rem;
-}
-
-.footer-bottom {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    opacity: 0.8;
-}
-
-/* 动画效果 */
-@keyframes textGlow {
-    from { text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
-    to { text-shadow: 0 0 20px rgba(255, 255, 255, 0.8); }
-}
-
 /* 响应式设计 */
-@media (max-width: 1200px) {
-    .solar-system {
-        transform: scale(0.4);
-        left: -15%;    /* 改为-15%，原来是-20% */
-        top: -15%;     /* 添加这行 */
-    }
-
-    .hero-content {
-        right: 5%;
-    }
-}
-
 @media (max-width: 768px) {
-    /* 导航栏响应式 */
-    nav {
-        padding: 0 1rem;
-    }
-
-    nav .logo h1 {
-        font-size: 1.2rem;
-    }
-
-    nav ul {
-        gap: 1rem;
-    }
-
-    /* 英雄区响应式 */
     .solar-system {
         transform: scale(0.3);
-        left: -20%;
-    }
-
-    .hero-content {
-        right: 50%;
-        transform: translate(50%, -50%);
-        width: 90%;
-    }
-
-    .hero-content h1 {
-        font-size: 2rem;
-    }
-
-    .hero-content p {
-        font-size: 1rem;
-    }
-
-    /* 文章和视频网格响应式 */
-    .posts-grid,
-    .videos-grid {
-        grid-template-columns: 1fr;
-        padding: 0 1rem;
-    }
-
-    /* 联系方式响应式 */
-    .contact-info {
-        flex-direction: column;
-        gap: 2rem;
-    }
-
-    .contact-item {
-        width: 100%;
-        justify-content: center;
-    }
-
-    /* 区域标题响应式 */
-    section h2 {
-        font-size: 2rem;
-        margin-bottom: 2rem;
+        left: -15%; /* 调整位置 */
+        top: -15%;  /* 添加这行 */
     }
 }
 
 @media (max-width: 480px) {
-    /* 超小屏幕适配 */
-    .hero {
-        height: 60vh;
-    }
-
     .solar-system {
         transform: scale(0.25);
-        left: -25%;
-        top: -25%;     /* 添加这行 */
-    }
-
-    nav ul {
-        display: none; /* 可以添加汉堡菜单替代 */
-    }
-
-    .hero-content h1 {
-        font-size: 1.8rem;
-    }
-
-    .post-card,
-    .video-card {
-        margin: 0 1rem;
-    }
-
-    .btn {
-        padding: 0.6rem 1.5rem;
-        font-size: 0.9rem;
-    }
-}
-
-/* 打印样式 */
-@media print {
-    .hero,
-    .videos-section,
-    nav,
-    footer {
-        display: none;
-    }
-
-    .posts-section {
-        padding: 0;
-    }
-
-    .post-card {
-        break-inside: avoid;
-        box-shadow: none;
+        left: -25%; /* 调整位置 */
+        top: -25%;  /* 添加这行 */
     }
 }
