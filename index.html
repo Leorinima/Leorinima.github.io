@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- 导航栏 -->
     <header>
         <nav>
             <div class="logo">
@@ -27,68 +26,73 @@
         <!-- 首页欢迎区 -->
         <section id="home" class="hero">
             <div class="space-background">
-                <div class="stars"></div>
-                <div class="solar-system">
-                    <div class="sun"></div>
-                    <div class="orbit mercury-orbit">
-                        <div class="planet mercury"></div>
-                    </div>
-                    <div class="orbit venus-orbit">
-                        <div class="planet venus"></div>
-                    </div>
-                    <div class="orbit earth-orbit">
-                        <div class="planet earth"></div>
-                    </div>
-                    <div class="orbit mars-orbit">
-                        <div class="planet mars"></div>
-                    </div>
-                    <div class="orbit jupiter-orbit">
-                        <div class="planet jupiter"></div>
-                    </div>
-                    <div class="orbit saturn-orbit">
-                        <div class="planet saturn">
-                            <div class="rings"></div>
-                        </div>
-                    </div>
+                <!-- 太阳 -->
+                <div class="sun"></div>
+                <!-- 行星们 -->
+                <div class="planet mercury">
+                    <div class="planet-orbit"></div>
                 </div>
+                <div class="planet earth">
+                    <div class="moon"></div>
+                </div>
+                <div class="planet jupiter">
+                    <div class="spots"></div>
+                </div>
+                <div class="planet saturn">
+                    <div class="saturn-rings"></div>
+                </div>
+                <!-- 点缀的星星 -->
+                <div class="stars"></div>
             </div>
             <div class="hero-content">
-                <h1>你好，我是 Leo</h1>
-                <p>吃的太饱 | 闲着无聊 | 躺着嫌累</p>
+                <img src="your_avatar.jpg" alt="个人头像" class="avatar">
+                <h1>你好，我是Leo</h1>
+                <p>吃的太饱 | 闲着无聊</p>
             </div>
         </section>
 
         <!-- 最新文章区域 -->
-<section id="latest-posts" class="posts-section">
-    <h2>最新文章</h2>
-    <div class="posts-grid">
-        <article class="post-card">
-            <div class="post-image">
-                <!-- 修改图片路径，确保images文件夹存在且包含相应图片 -->
-                <img src="images/post1.jpg" alt="文章配图" onerror="this.src='images/default-post.jpg'">
+        <section id="latest-posts" class="posts-section">
+            <h2>最新文章</h2>
+            <div class="posts-grid">
+                <article class="post-card">
+                    <div class="post-image">
+                        <img src="images/posts/post1/cover.jpg" alt="文章封面">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span><i class="far fa-calendar"></i> 2024-03-20</span>
+                        </div>
+                        <h3>文章标题</h3>
+                        <p>文章摘要...</p>
+                        <a href="posts/post1.html" class="read-more">阅读更多</a>
+                    </div>
+                </article>
             </div>
-            <!-- ... existing code ... -->
-        </article>
-    </div>
-</section>
+            <div class="view-all">
+                <a href="posts/index.html" class="btn">查看所有文章</a>
+            </div>
+        </section>
 
         <!-- 最新视频区域 -->
         <section id="latest-videos" class="videos-section">
             <h2>最新视频</h2>
             <div class="videos-grid">
                 <div class="video-card">
-                    <div class="video-thumbnail">
-                        <img src="images/video1.jpg" alt="视频缩略图" onerror="this.src='images/default-video.jpg'">
-                        <div class="play-button">
-                            <i class="fas fa-play"></i>
-                        </div>
+                    <div class="video-container">
+                        <iframe src="//player.bilibili.com/player.html?bvid=你的视频ID" 
+                                scrolling="no" 
+                                border="0" 
+                                frameborder="no" 
+                                framespacing="0" 
+                                allowfullscreen="true"> 
+                        </iframe>
                     </div>
                     <div class="video-info">
                         <h3>视频标题</h3>
                         <p>视频描述...</p>
                     </div>
                 </div>
-                <!-- 可以添加更多视频卡片 -->
             </div>
             <div class="view-all">
                 <a href="videos/index.html" class="btn">查看所有视频</a>
