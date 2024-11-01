@@ -3,16 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的个人网页</title>
+    <title>我的个人博客</title>
     <link rel="stylesheet" href="style.css">
+    <!-- 添加字体图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
         <nav>
+            <div class="logo">
+                <h1>我的博客</h1>
+            </div>
             <ul>
                 <li><a href="#home">首页</a></li>
+                <li><a href="#blog">博客文章</a></li>
+                <li><a href="#projects">项目展示</a></li>
                 <li><a href="#about">关于我</a></li>
-                <li><a href="#skills">技能</a></li>
                 <li><a href="#contact">联系方式</a></li>
             </ul>
         </nav>
@@ -21,44 +27,129 @@
     <main>
         <section id="home" class="hero">
             <div class="hero-content">
-                <h1>你好，我是Leo</h1>
-                <p>1111111111111</p>
+                <img src="avatar.jpg" alt="个人头像" class="avatar">
+                <h1>你好，我是小明</h1>
+                <p>前端开发工程师 | 技术博主 | 开源爱好者</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
             </div>
         </section>
 
-        <section id="about">
+        <section id="blog" class="blog-section">
+            <h2>最新文章</h2>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="blog1.jpg" alt="文章配图">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> 2024-03-20</span>
+                            <span><i class="far fa-folder"></i> 技术</span>
+                        </div>
+                        <h3>文章标题1</h3>
+                        <p>这里是文章摘要，简短介绍文章的主要内容...</p>
+                        <a href="#" class="read-more">阅读更多</a>
+                    </div>
+                </article>
+                <!-- 更多文章卡片 -->
+            </div>
+            <div class="view-all">
+                <a href="#" class="btn">查看所有文章</a>
+            </div>
+        </section>
+
+        <section id="projects" class="projects-section">
+            <h2>项目展示</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="project1.jpg" alt="项目截图">
+                    <div class="project-info">
+                        <h3>项目名称</h3>
+                        <p>项目描述和使用的技术栈...</p>
+                        <div class="project-links">
+                            <a href="#" class="btn">查看演示</a>
+                            <a href="#" class="btn">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 更多项目卡片 -->
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
             <h2>关于我</h2>
             <div class="about-content">
-                <p>我是一名热爱技术的开发者，专注于网站开发和用户体验设计。</p>
-                <p>目前在XX公司担任前端开发工程师，负责网站的开发和维护。</p>
+                <div class="about-text">
+                    <p>大家好，我是一名热爱技术的开发者。主要关注前端开发、人工智能等领域。</p>
+                    <p>目前在XX公司担任前端开发工程师，负责...</p>
+                    <div class="skills">
+                        <h3>技术栈</h3>
+                        <div class="skill-tags">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>React</span>
+                            <span>Vue</span>
+                            <span>Node.js</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="skills">
-            <h2>专业技能</h2>
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <h3>前端开发</h3>
-                    <p>HTML, CSS, JavaScript</p>
-                </div>
-                <div class="skill-item">
-                    <h3>UI设计</h3>
-                    <p>Figma, Adobe XD</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact">
+        <section id="contact" class="contact-section">
             <h2>联系我</h2>
-            <div class="contact-info">
-                <p>邮箱：your.email@example.com</p>
-                <p>微信：your_wechat</p>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>email@example.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-weixin"></i>
+                        <p>WeChat_ID</p>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="你的名字">
+                    <input type="email" placeholder="你的邮箱">
+                    <textarea placeholder="你的留言"></textarea>
+                    <button type="submit" class="btn">发送消息</button>
+                </form>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 煮软钢的个人网站</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>关于本站</h3>
+                <p>这是一个记录个人技术成长、分享经验的个人博客。</p>
+            </div>
+            <div class="footer-section">
+                <h3>快速链接</h3>
+                <ul>
+                    <li><a href="#blog">博客文章</a></li>
+                    <li><a href="#projects">项目展示</a></li>
+                    <li><a href="#about">关于我</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>联系方式</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 我的个人博客. All rights reserved.</p>
+        </div>
     </footer>
 </body>
 </html>
