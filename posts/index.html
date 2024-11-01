@@ -3,81 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>文章列表 - 我的博客</title>
+    <title>文章列表 - Leo's 博客</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <!-- 导航栏 -->
     <header>
         <nav>
             <div class="logo">
-                <a href="../index.html">返回首页</a>
+                <h1>Leo's 博客</h1>
             </div>
             <ul>
+                <li><a href="../index.html">首页</a></li>
                 <li><a href="../index.html#latest-posts">最新文章</a></li>
                 <li><a href="../index.html#latest-videos">最新视频</a></li>
+                <li><a href="../index.html#contact">联系方式</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="posts-page">
-        <h1 class="page-title">所有文章</h1>
-        
-        <!-- 文章分类筛选 -->
-        <div class="posts-filter">
-            <button class="filter-btn active" data-category="all">全部</button>
-            <button class="filter-btn" data-category="tech">技术</button>
-            <button class="filter-btn" data-category="life">生活</button>
-        </div>
-
-        <!-- 文章列表 -->
-        <div class="posts-list">
-            <!-- 文章1 -->
-            <article class="post-item">
-                <div class="post-image">
-                    <img src="../images/posts/post1/cover.jpg" alt="文章封面">
-                </div>
-                <div class="post-content">
-                    <div class="post-meta">
-                        <span><i class="far fa-calendar"></i> 2024-03-20</span>
-                        <span><i class="far fa-folder"></i> 技术</span>
+    <main>
+        <section class="posts-section" style="margin-top: 60px;">
+            <h2>所有文章</h2>
+            <div class="posts-grid">
+                <!-- 文章列表 -->
+                <article class="post-card">
+                    <div class="post-image">
+                        <img src="../images/posts/post1/thumbnail.jpg" alt="文章配图">
                     </div>
-                    <h2><a href="post1.html">第一篇文章标题</a></h2>
-                    <p class="post-excerpt">这是文章摘要，简短介绍文章的主要内容...</p>
-                    <a href="post1.html" class="read-more">阅读全文 <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </article>
-
-            <!-- 文章2 -->
-            <article class="post-item">
-                <div class="post-image">
-                    <img src="../images/posts/post2/cover.jpg" alt="文章封面">
-                </div>
-                <div class="post-content">
-                    <div class="post-meta">
-                        <span><i class="far fa-calendar"></i> 2024-03-21</span>
-                        <span><i class="far fa-folder"></i> 生活</span>
+                    <div class="post-content">
+                        <h3>文章标题 1</h3>
+                        <p>文章简介...</p>
+                        <div class="post-meta">
+                            <span><i class="far fa-calendar"></i> 2024-01-01</span>
+                            <span><i class="far fa-eye"></i> 1000</span>
+                        </div>
                     </div>
-                    <h2><a href="post2.html">第二篇文章标题</a></h2>
-                    <p class="post-excerpt">这是文章摘要，简短介绍文章的主要内容...</p>
-                    <a href="post2.html" class="read-more">阅读全文 <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </article>
-        </div>
-
-        <!-- 分页 -->
-        <div class="pagination">
-            <a href="#" class="page-btn disabled">&laquo; 上一页</a>
-            <span class="page-number active">1</span>
-            <a href="#" class="page-number">2</a>
-            <a href="#" class="page-number">3</a>
-            <a href="#" class="page-btn">下一页 &raquo;</a>
-        </div>
+                </article>
+                <!-- 可以添加更多文章 -->
+            </div>
+        </section>
     </main>
 
     <footer>
         <div class="footer-bottom">
-            <p>&copy; 2024 我的博客. All rights reserved.</p>
+            <p>&copy; 2024 Leo's 博客. All rights reserved.</p>
         </div>
     </footer>
 </body>
