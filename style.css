@@ -53,14 +53,15 @@ nav a {
 
 /* 主页英雄区 */
 .hero {
-    min-height: 100vh;
+    min-height: 500px;
     background: #000;
     position: relative;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 60px;
+    padding: 80px 20px 40px;
+    margin-bottom: 2rem;
 }
 
 /* 太空背景 */
@@ -76,12 +77,12 @@ nav a {
 /* 太阳 */
 .sun {
     position: absolute;
-    width: 120px;
-    height: 120px;
+    width: 80px;
+    height: 80px;
     background: radial-gradient(circle at center, #ffd200, #f7971e);
     border-radius: 50%;
-    top: 20%;
-    left: 20%;
+    top: 25%;
+    left: 15%;
     box-shadow: 0 0 60px #ff4e50;
     animation: glow 4s ease-in-out infinite alternate;
 }
@@ -93,8 +94,8 @@ nav a {
 }
 
 .mercury {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     background: linear-gradient(45deg, #727272, #a8a8a8);
     top: 30%;
     left: 35%;
@@ -102,8 +103,8 @@ nav a {
 }
 
 .earth {
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
     background: radial-gradient(circle at 30% 30%, #4b9fe1, #0a2d5c);
     top: 45%;
     left: 45%;
@@ -111,8 +112,8 @@ nav a {
 }
 
 .jupiter {
-    width: 80px;
-    height: 80px;
+    width: 55px;
+    height: 55px;
     background: linear-gradient(45deg, #c1440e, #d36f39);
     top: 60%;
     left: 55%;
@@ -120,8 +121,8 @@ nav a {
 }
 
 .saturn {
-    width: 70px;
-    height: 70px;
+    width: 45px;
+    height: 45px;
     background: linear-gradient(45deg, #e6c588, #b69c6f);
     top: 25%;
     right: 25%;
@@ -156,8 +157,8 @@ nav a {
 
 /* 动画定义 */
 @keyframes orbit {
-    from { transform: rotate(0deg) translateX(200px) rotate(0deg); }
-    to   { transform: rotate(360deg) translateX(200px) rotate(-360deg); }
+    from { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
 }
 
 @keyframes glow {
@@ -176,25 +177,27 @@ nav a {
     z-index: 1;
     text-align: center;
     color: var(--white);
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .hero-content h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 .hero-content p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     opacity: 0.9;
 }
 
 .avatar {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     border: 3px solid rgba(255, 255, 255, 0.3);
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 /* 其他区域样式 */
@@ -202,6 +205,49 @@ nav a {
     padding: 4rem 2rem;
     max-width: var(--max-width);
     margin: 0 auto;
+}
+
+/* 文章卡片样式 */
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.post-card {
+    background: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* 视频卡片样式 */
+.videos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.video-card {
+    background: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* 联系方式样式 */
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 /* 页脚 */
@@ -224,6 +270,11 @@ footer {
     }
     
     .hero-content h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+    }
+    
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
     }
 }
