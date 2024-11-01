@@ -79,26 +79,72 @@ section {
 }
 
 /* 首页英雄区 */
+/* 添加星空效果 */
 .hero {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    position: relative;
+    background: linear-gradient(45deg, #1a1b26, #24283b);
     color: var(--white);
     text-align: center;
     padding: 6rem 2rem;
     margin-top: 0;
+    overflow: hidden;
+}
+
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: 
+        radial-gradient(2px 2px at 20px 30px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 50px 160px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 160px 120px, #fff, rgba(0,0,0,0));
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    animation: stars 4s linear infinite;
+    opacity: 0.5;
+}
+
+@keyframes stars {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-200px);
+    }
 }
 
 .hero-content {
-    max-width: 800px;
-    margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
+/* 调整头像样式 */
 .avatar {
     width: 150px;
     height: 150px;
     border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
     margin-bottom: 2rem;
-    border: 3px solid var(--white);
-    object-fit: cover;
+}
+
+/* 调整文字样式 */
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
 }
 
 /* 文章卡片样式 */
