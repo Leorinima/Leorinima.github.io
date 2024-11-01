@@ -1,10 +1,4 @@
 /* 基础设置 */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 :root {
     --primary-color: #3498db;
     --secondary-color: #2c3e50;
@@ -12,12 +6,25 @@
     --light-gray: #f4f4f4;
     --dark-gray: #666;
     --white: #fff;
+    --max-width: 1200px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     font-family: 'Microsoft YaHei', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
+    background-color: var(--light-gray);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 /* 导航栏样式 */
@@ -31,7 +38,7 @@ header {
 }
 
 nav {
-    max-width: 1200px;
+    max-width: var(--max-width);
     margin: 0 auto;
     padding: 1rem;
     display: flex;
@@ -52,8 +59,6 @@ nav ul {
 
 nav a {
     color: var(--text-color);
-    text-decoration: none;
-    font-size: 1rem;
     transition: color 0.3s;
 }
 
@@ -64,11 +69,12 @@ nav a:hover {
 /* 主要内容区域 */
 main {
     margin-top: 60px;
+    min-height: calc(100vh - 120px);
 }
 
 section {
     padding: 4rem 2rem;
-    max-width: 1200px;
+    max-width: var(--max-width);
     margin: 0 auto;
 }
 
@@ -92,32 +98,18 @@ section {
     border-radius: 50%;
     margin-bottom: 2rem;
     border: 3px solid var(--white);
+    object-fit: cover;
 }
 
-.social-links {
-    margin-top: 2rem;
-}
-
-.social-links a {
-    color: var(--white);
-    font-size: 1.5rem;
-    margin: 0 1rem;
-    transition: transform 0.3s;
-}
-
-.social-links a:hover {
-    transform: translateY(-3px);
-}
-
-/* 博客文章区域 */
-.blog-grid {
+/* 文章卡片样式 */
+.posts-grid, .videos-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
 }
 
-.blog-card {
+.post-card {
     background: var(--white);
     border-radius: 8px;
     overflow: hidden;
@@ -125,39 +117,147 @@ section {
     transition: transform 0.3s;
 }
 
-.blog-card:hover {
+.post-card:hover {
     transform: translateY(-5px);
 }
 
-.blog-image img {
+.post-image {
     width: 100%;
     height: 200px;
+    overflow: hidden;
+}
+
+.post-image img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
-.blog-content {
+.post-content {
     padding: 1.5rem;
 }
 
-.blog-meta {
+.post-meta {
     font-size: 0.9rem;
     color: var(--dark-gray);
     margin-bottom: 1rem;
 }
 
-.blog-meta span {
+.post-meta span {
     margin-right: 1rem;
 }
 
-.blog-meta i {
+.post-meta i {
     margin-right: 0.5rem;
 }
 
-.read-more {
+/* 视频卡片样式 */
+.video-card {
+    background: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video-info {
+    padding: 1.5rem;
+}
+
+/* 按钮样式 */
+.btn {
     display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
+.view-all {
+    text-align: center;
+    margin-top: 2rem;
+}
+/* 分页样式 */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 3rem;
+}
+
+.page-btn, .page-number {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
     color: var(--primary-color);
-    text-decoration: none;
-    margin-top: 1rem;
+    transition: all 0.3s;
+}
+
+.page-number.active {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.page-btn:hover, .page-number:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.page-btn.disabled {
+    border-color: var(--dark-gray);
+    color: var(--dark-gray);
+    pointer-events: none;
+}
+
+/* 联系方式样式 */
+.contact-section {
+    background-color: var(--white);
+    border-radius: 8px;
+    margin: 2rem auto;
+    padding: 3rem 2rem;
+}
+
+.contact-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contact-item i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
 }
 
 /* 页脚样式 */
@@ -166,6 +266,82 @@ footer {
     color: var(--white);
     padding: 1rem;
     text-align: center;
+}
+
+/* 文章列表页样式 */
+.posts-page, .videos-page {
+    max-width: var(--max-width);
+    margin: 80px auto 2rem;
+    padding: 0 2rem;
+}
+
+.page-title {
+    text-align: center;
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
+}
+
+.posts-filter {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.filter-btn {
+    padding: 0.5rem 1.5rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 20px;
+    background: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* 文章列表样式 */
+.post-item {
+    background: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+}
+
+.post-item .post-image {
+    width: 300px;
+    height: auto;
+}
+
+.post-item .post-content {
+    flex: 1;
+    padding: 2rem;
+}
+
+.post-excerpt {
+    color: var(--dark-gray);
+    margin: 1rem 0;
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.post-card, .video-card, .post-item {
+    animation: fadeIn 0.5s ease-out;
 }
 
 /* 响应式设计 */
@@ -182,7 +358,88 @@ footer {
         margin-top: 1rem;
     }
 
+    .post-item {
+        flex-direction: column;
+    }
+
+    .post-item .post-image {
+        width: 100%;
+        height: 200px;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .posts-filter {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
     .hero {
         padding: 4rem 1rem;
     }
+
+    .avatar {
+        width: 120px;
+        height: 120px;
+    }
+
+    .post-content, .video-info {
+        padding: 1rem;
+    }
+
+    .page-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* 滚动条美化 */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #2980b9;
+}
+
+/* 社交链接样式 */
+.social-links {
+    margin-top: 2rem;
+}
+
+.social-links a {
+    color: var(--white);
+    font-size: 1.5rem;
+    margin: 0 1rem;
+    transition: transform 0.3s;
+}
+
+.social-links a:hover {
+    transform: translateY(-3px);
+}
+
+/* 通用工具类 */
+.text-center {
+    text-align: center;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
 }
