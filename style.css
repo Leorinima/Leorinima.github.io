@@ -68,11 +68,12 @@ nav a:hover {
 
 /* 英雄区样式 */
 .hero {
-    height: 50vh;
+    height: 100vh;
     background: #000;
     position: relative;
     overflow: hidden;
-    margin-top: var(--header-height);
+    margin-top: 0; /* 移除margin-top */
+    padding-top: var(--header-height); /* 添加padding-top来为固定导航栏腾出空间 */
 }
 
 /* 太空背景 */
