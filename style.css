@@ -5,7 +5,6 @@
     --text-color: #333;
     --white: #fff;
     --max-width: 1200px;
-    --header-height: 60px;
 }
 
 * {
@@ -14,41 +13,31 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     font-family: 'Microsoft YaHei', sans-serif;
     line-height: 1.6;
-    color: var(--text-color);
-    overflow-x: hidden;
-    background: #1B2735; /* 添加背景色 */
 }
 
-/* 导航栏样式 */
+/* 导航栏 */
 header {
-    background-color: transparent; /* 改为transparent */
-    position: absolute; /* 改为absolute */
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    height: var(--header-height);
 }
 
 nav {
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100%;
 }
 
 nav .logo h1 {
     color: var(--white);
-    font-size: 1.5rem;
 }
 
 nav ul {
@@ -60,75 +49,28 @@ nav ul {
 nav a {
     color: var(--white);
     text-decoration: none;
-    transition: color 0.3s;
 }
 
-nav a:hover {
-    color: var(--primary-color);
-}
-
-/* 英雄区样式 */
+/* 主页英雄区 */
 .hero {
-    height: 100vh; /* 改为100vh */
-    width: 100vw; /* 添加这行 */
+    min-height: 100vh;
+    background: #000;
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 60px;
 }
 
 /* 太空背景 */
 .space-background {
     position: absolute;
-    width: 100%;
-    height: 100%;
     top: 0;
     left: 0;
-    background: radial-gradient(ellipse at center, #1B2735 0%, #090A0F 100%);
-}
-
-/* 星星效果 */
-.stars {
-    position: absolute;
     width: 100%;
     height: 100%;
-}
-
-.stars::before,
-.stars::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: 
-        radial-gradient(2px 2px at 20px 30px, #fff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 50px 160px, #fff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 160px 120px, #fff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 170px 90px, #fff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 150px 230px, #fff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 200px 190px, #fff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 220px 40px, #fff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 240px 120px, #fff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 260px 180px, #fff, rgba(0,0,0,0));
-    background-repeat: repeat;
-    background-size: 300px 300px;
-    animation: twinkle 4s ease-in-out infinite;
-}
-
-.stars::after {
-    background-position: 150px 150px;
-    animation-delay: 2s;
-}
-
-/* 太阳系容器 */
-.solar-system {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    transform: scale(0.8);
-    left: -10%; /* 调整位置 */
-    top: -10%;  /* 调整位置 */
+    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
 }
 
 /* 太阳 */
@@ -136,217 +78,152 @@ nav a:hover {
     position: absolute;
     width: 120px;
     height: 120px;
-    background: radial-gradient(circle at center,
-        #fff 0%,
-        #ffd200 20%,
-        #f7971e 40%,
-        #ff4e50 100%
-    );
+    background: radial-gradient(circle at center, #ffd200, #f7971e);
     border-radius: 50%;
-    left: 25%; /* 调整位置 */
-    top: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: 
-        0 0 120px #ff4e50,
-        0 0 60px #ff4e50,
-        0 0 30px #ff4e50;
-    animation: sunGlow 4s ease-in-out infinite alternate;
+    top: 20%;
+    left: 20%;
+    box-shadow: 0 0 60px #ff4e50;
+    animation: glow 4s ease-in-out infinite alternate;
 }
 
-/* 轨道基础样式 */
-.orbit {
-    position: absolute;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    left: 25%; /* 调整位置 */
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
-/* 各个轨道大小和动画 */
-.mercury-orbit {
-    width: 200px;
-    height: 200px;
-    animation: rotate 4s linear infinite;
-}
-
-.venus-orbit {
-    width: 300px;
-    height: 300px;
-    animation: rotate 6.5s linear infinite;
-}
-
-.earth-orbit {
-    width: 400px;
-    height: 400px;
-    animation: rotate 10s linear infinite;
-}
-
-.mars-orbit {
-    width: 500px;
-    height: 500px;
-    animation: rotate 15s linear infinite;
-}
-
-.jupiter-orbit {
-    width: 650px;
-    height: 650px;
-    animation: rotate 25s linear infinite;
-}
-
-.saturn-orbit {
-    width: 800px;
-    height: 800px;
-    animation: rotate 35s linear infinite;
-}
-
-/* 行星基础样式 */
+/* 行星 */
 .planet {
     position: absolute;
     border-radius: 50%;
-    top: -10px;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
-/* 各个行星样式 */
 .mercury {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     background: linear-gradient(45deg, #727272, #a8a8a8);
-}
-
-.venus {
-    width: 35px;
-    height: 35px;
-    background: linear-gradient(45deg, #e6b980, #eacda3);
+    top: 30%;
+    left: 35%;
+    animation: orbit 12s linear infinite;
 }
 
 .earth {
-    width: 40px;
-    height: 40px;
-    background: radial-gradient(circle at 30% 30%,
-        #4b9fe1 0%,
-        #1a4e95 50%,
-        #0a2d5c 100%
-    );
-}
-
-.mars {
-    width: 30px;
-    height: 30px;
-    background: linear-gradient(45deg, #c1440e, #d36f39);
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle at 30% 30%, #4b9fe1, #0a2d5c);
+    top: 45%;
+    left: 45%;
+    animation: orbit 20s linear infinite;
 }
 
 .jupiter {
-    width: 85px;
-    height: 85px;
-    background: linear-gradient(
-        to bottom,
-        #c1440e 0%,
-        #d36f39 20%,
-        #bf8456 40%,
-        #d36f39 60%,
-        #c1440e 100%
-    );
-    position: relative;
-    overflow: hidden;
-}
-
-.jupiter::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 8px,
-        rgba(255, 255, 255, 0.1) 8px,
-        rgba(255, 255, 255, 0.1) 16px
-    );
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(45deg, #c1440e, #d36f39);
+    top: 60%;
+    left: 55%;
+    animation: orbit 30s linear infinite;
 }
 
 .saturn {
-    width: 75px;
-    height: 75px;
+    width: 70px;
+    height: 70px;
     background: linear-gradient(45deg, #e6c588, #b69c6f);
-    position: relative;
+    top: 25%;
+    right: 25%;
+    animation: orbit 40s linear infinite;
 }
 
-/* 土星环 */
-.rings {
+.saturn-rings {
     position: absolute;
-    width: 200%;
-    height: 10px;
-    background: linear-gradient(
-        90deg,
-        rgba(230, 197, 136, 0),
-        rgba(230, 197, 136, 0.5) 15%,
-        rgba(230, 197, 136, 0.5) 85%,
-        rgba(230, 197, 136, 0)
-    );
+    width: 140%;
+    height: 20px;
+    background: rgba(230, 197, 136, 0.3);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(20deg);
     border-radius: 50%;
-    box-shadow: 
-        0 2px 0 rgba(230, 197, 136, 0.3),
-        0 -2px 0 rgba(230, 197, 136, 0.3);
+}
+
+/* 星星背景 */
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(2px 2px at 20px 30px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 50px 160px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0));
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    animation: twinkle 4s ease-in-out infinite;
 }
 
 /* 动画定义 */
-@keyframes rotate {
-    from { transform: translate(-50%, -50%) rotate(0deg); }
-    to { transform: translate(-50%, -50%) rotate(360deg); }
+@keyframes orbit {
+    from { transform: rotate(0deg) translateX(200px) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(200px) rotate(-360deg); }
+}
+
+@keyframes glow {
+    from { box-shadow: 0 0 60px #ff4e50; }
+    to   { box-shadow: 0 0 100px #ff4e50; }
 }
 
 @keyframes twinkle {
     0%, 100% { opacity: 0.3; }
-    50% { opacity: 0.8; }
+    50% { opacity: 0.6; }
 }
 
-@keyframes sunGlow {
-    from { box-shadow: 0 0 120px #ff4e50, 0 0 60px #ff4e50, 0 0 30px #ff4e50; }
-    to { box-shadow: 0 0 150px #ff4e50, 0 0 80px #ff4e50, 0 0 40px #ff4e50; }
-}
-
-/* 英雄区内容 */
+/* 内容区 */
 .hero-content {
-    position: absolute;
-    right: 10%;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--white);
-    text-align: center;
+    position: relative;
     z-index: 1;
+    text-align: center;
+    color: var(--white);
 }
 
 .hero-content h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-    animation: textGlow 2s ease-in-out infinite alternate;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 .hero-content p {
-    font-size: 1.5rem;
-    opacity: 0.8;
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    margin-bottom: 2rem;
+}
+
+/* 其他区域样式 */
+.posts-section, .videos-section, .contact-section {
+    padding: 4rem 2rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+/* 页脚 */
+footer {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 1rem;
 }
 
 /* 响应式设计 */
 @media (max-width: 768px) {
-    .solar-system {
-        transform: scale(0.6);
-        left: -10%; /* 调整位置 */
-        top: -10%;  /* 添加这行 */
+    nav {
+        flex-direction: column;
+        padding: 1rem;
     }
-}
-
-@media (max-width: 480px) {
-    .solar-system {
-        transform: scale(0.5);
-        left: -15%; /* 调整位置 */
-        top: -15%;  /* 添加这行 */
+    
+    nav ul {
+        margin-top: 1rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
     }
 }
