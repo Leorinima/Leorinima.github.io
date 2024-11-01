@@ -49,10 +49,10 @@ nav a {
     color: var(--text-color);
 }
 
-/* 英雄区样式 */
+/* 太空背景 */
 .hero {
     position: relative;
-    background: linear-gradient(45deg, #0B0B2B, #1B1B3A);
+    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -69,90 +69,164 @@ nav a {
     height: 100%;
 }
 
-/* 行星样式 */
+/* 太阳 */
+.sun {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle at center, 
+        #ffd200 0%,
+        #f7971e 50%,
+        #ff4e50 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 100px #ff4e50,
+                0 0 60px #ff4e50,
+                0 0 30px #ff4e50;
+    top: 20%;
+    left: 10%;
+    animation: glow 3s ease-in-out infinite alternate;
+}
+
+/* 行星通用样式 */
 .planet {
     position: absolute;
     border-radius: 50%;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
-.planet-1 {
-    width: 100px;
-    height: 100px;
-    background: linear-gradient(45deg, #FFB347, #FFCC33);
-    top: 20%;
-    left: 10%;
-    animation: orbit1 20s linear infinite;
+/* 水星 */
+.mercury {
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(45deg, #727272, #a8a8a8);
+    top: 30%;
+    left: 30%;
+    animation: orbit 8s linear infinite;
 }
 
-.planet-1::after {
-    content: '';
+/* 地球 */
+.earth {
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle at 30% 30%,
+        #4b9fe1 0%,
+        #1a4e95 50%,
+        #0a2d5c 100%);
+    top: 45%;
+    left: 45%;
+    animation: orbit 15s linear infinite;
+    position: relative;
+}
+
+/* 月球 */
+.moon {
     position: absolute;
-    width: 140px;
+    width: 14px;
+    height: 14px;
+    background: #d3d3d3;
+    border-radius: 50%;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: moonOrbit 4s linear infinite;
+}
+
+/* 木星 */
+.jupiter {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(
+        45deg,
+        #c1440e,
+        #d36f39,
+        #bf8456
+    );
+    top: 60%;
+    left: 60%;
+    animation: orbit 20s linear infinite;
+    overflow: hidden;
+}
+
+/* 木星的条纹 */
+.spots {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        rgba(255, 255, 255, 0.1) 10px,
+        rgba(255, 255, 255, 0.1) 20px
+    );
+}
+
+/* 土星 */
+.saturn {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(45deg, #e6c588, #b69c6f);
+    top: 25%;
+    right: 20%;
+    animation: orbit 25s linear infinite;
+}
+
+/* 土星环 */
+.saturn-rings {
+    position: absolute;
+    width: 140%;
     height: 20px;
-    background: rgba(255, 204, 51, 0.3);
+    background: linear-gradient(
+        90deg,
+        rgba(230, 197, 136, 0.5),
+        rgba(182, 156, 111, 0.3)
+    );
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(30deg);
+    transform: translate(-50%, -50%) rotate(20deg);
     border-radius: 50%;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
 }
 
-.planet-2 {
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(45deg, #4CA1AF, #2C3E50);
-    top: 60%;
-    right: 15%;
-    animation: orbit2 15s linear infinite;
-}
-
-.planet-3 {
-    width: 40px;
-    height: 40px;
-    background: linear-gradient(45deg, #FF416C, #FF4B2B);
-    top: 30%;
-    right: 30%;
-    animation: orbit3 25s linear infinite;
-}
-
-.shooting-star {
+/* 星空背景 */
+.stars {
     position: absolute;
-    width: 100px;
-    height: 2px;
-    background: linear-gradient(90deg, #ffffff, transparent);
-    animation: shooting 3s linear infinite;
-    top: 20%;
-    left: -100px;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(2px 2px at 20px 30px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 50px 160px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0));
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    animation: twinkle 4s linear infinite;
+    opacity: 0.5;
 }
 
 /* 动画定义 */
-@keyframes orbit1 {
-    from { transform: rotate(0deg) translateX(100px) rotate(0deg); }
-    to   { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
-}
-
-@keyframes orbit2 {
+@keyframes orbit {
     from { transform: rotate(0deg) translateX(150px) rotate(0deg); }
-    to   { transform: rotate(-360deg) translateX(150px) rotate(360deg); }
+    to   { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
 }
 
-@keyframes orbit3 {
-    from { transform: rotate(0deg) translateX(120px) rotate(0deg); }
-    to   { transform: rotate(360deg) translateX(120px) rotate(-360deg); }
+@keyframes moonOrbit {
+    from { transform: rotate(0deg) translateX(30px); }
+    to   { transform: rotate(360deg) translateX(30px); }
 }
 
-@keyframes shooting {
-    from {
-        transform: translateX(0) translateY(0) rotate(45deg);
-        opacity: 1;
-    }
-    to {
-        transform: translateX(1000px) translateY(1000px) rotate(45deg);
-        opacity: 0;
-    }
+@keyframes glow {
+    from { box-shadow: 0 0 100px #ff4e50, 0 0 60px #ff4e50, 0 0 30px #ff4e50; }
+    to   { box-shadow: 0 0 120px #ff4e50, 0 0 80px #ff4e50, 0 0 40px #ff4e50; }
 }
 
-/* 内容样式 */
+@keyframes twinkle {
+    from { opacity: 0.5; }
+    50%  { opacity: 1; }
+    to   { opacity: 0.5; }
+}
+
+/* 保持其他内容样式不变 */
 .hero-content {
     position: relative;
     z-index: 1;
@@ -160,25 +234,19 @@ nav a {
     color: var(--white);
 }
 
-.avatar {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 3px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-    margin-bottom: 2rem;
-}
-
-.hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-}
-
-.hero p {
-    font-size: 1.2rem;
-    opacity: 0.9;
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+/* 添加一些光晕效果 */
+.hero-content::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center,
+        rgba(255, 255, 255, 0.1) 0%,
+        transparent 70%);
+    z-index: -1;
 }
 
 /* 文章区域样式 */
