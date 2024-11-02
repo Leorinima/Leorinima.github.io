@@ -187,8 +187,8 @@ nav a:hover {
 }
 
 .jupiter-orbit {
-    width: 1000px;
-    height: 1000px;
+    width: 1200px;
+    height: 1200px;
     animation: rotate 25s linear infinite;
 }
 
