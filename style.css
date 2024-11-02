@@ -73,23 +73,23 @@ nav a:hover {
 }
 
 .cat-icon {
-    width: 25px;
-    height: 25px;
-    background-color: #ff69b4;
-    clip-path: polygon(35% 0%, 65% 0%, 90% 35%, 90% 70%, 65% 100%, 35% 100%, 10% 70%, 10% 35%); /* 创建猫脸形状 */
+    width: 20px;
+    height: 20px;
+    background-color: #ffffff; /* 改为白色 */
+    clip-path: circle(50% at 50% 50%); /* 圆形猫脸 */
     position: relative;
-    margin-right: 5px;
+    margin-right: 10px;
 }
 
 /* 左耳 */
 .cat-icon::before {
     content: '';
     position: absolute;
-    top: -10px;
-    left: 0px;
-    width: 12px;
-    height: 12px;
-    background-color: #ff69b4;
+    top: -6px;
+    left: 2px;
+    width: 8px;
+    height: 8px;
+    background-color: #ffffff; /* 白色耳朵 */
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
     transform: rotate(-30deg);
 }
@@ -98,11 +98,11 @@ nav a:hover {
 .cat-icon::after {
     content: '';
     position: absolute;
-    top: -10px;
-    right: 0px;
-    width: 12px;
-    height: 12px;
-    background-color: #ff69b4;
+    top: -6px;
+    right: 2px;
+    width: 8px;
+    height: 8px;
+    background-color: #ffffff; /* 白色耳朵 */
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
     transform: rotate(30deg);
 }
