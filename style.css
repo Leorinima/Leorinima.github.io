@@ -163,32 +163,32 @@ nav a:hover {
 
 /* 各个轨道大小和动画 */
 .mercury-orbit {
-    width: 300px;
-    height: 300px;
+    width: 350px;
+    height: 350px;
     animation: rotate 4s linear infinite;
 }
 
 .venus-orbit {
-    width: 490px;
-    height: 490px;
+    width: 550px;
+    height: 550px;
     animation: rotate 6.5s linear infinite;
 }
 
 .earth-orbit {
-    width: 610px;
-    height: 610px;
+    width: 670px;
+    height: 670px;
     animation: rotate 10s linear infinite;
 }
 
 .mars-orbit {
-    width: 650px;
-    height: 650px;
+    width: 800px;
+    height: 800px;
     animation: rotate 15s linear infinite;
 }
 
 .jupiter-orbit {
-    width: 850px;
-    height: 850px;
+    width: 950px;
+    height: 950px;
     animation: rotate 25s linear infinite;
 }
 
