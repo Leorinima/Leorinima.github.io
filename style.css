@@ -175,14 +175,14 @@ nav a:hover {
 }
 
 .earth-orbit {
-    width: 670px;
-    height: 670px;
+    width: 750px;
+    height: 750px;
     animation: rotate 10s linear infinite;
 }
 
 .mars-orbit {
-    width: 900px;
-    height: 900px;
+    width: 950px;
+    height: 950px;
     animation: rotate 15s linear infinite;
 }
 
