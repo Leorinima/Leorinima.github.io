@@ -82,32 +82,62 @@ nav a:hover {
     z-index: 1;
 }
 
-/* 耳朵 */
-.cat-icon::before,
-.cat-icon::after {
+/* 耳朵容器 */
+.cat-icon::before {
     content: '';
     position: absolute;
     top: -6px;
+    left: 0;
     width: 10px;
     height: 10px;
     background-color: #ffffff;
     clip-path: polygon(0 100%, 50% 0, 100% 100%);
     z-index: 2;
-}
-
-/* 左耳 */
-.cat-icon::before {
-    left: 0;
     transform: rotate(-30deg);
 }
 
-/* 右耳 */
 .cat-icon::after {
+    content: '';
+    position: absolute;
+    top: -6px;
     right: 0;
+    width: 10px;
+    height: 10px;
+    background-color: #ffffff;
+    clip-path: polygon(0 100%, 50% 0, 100% 100%);
+    z-index: 2;
     transform: rotate(30deg);
 }
 
-/* 胡须 */
+/* 胡须样式 */
+.whiskers::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 50%;
+    width: 8px;
+    height: 1px;
+    background-color: #ffffff;
+    box-shadow: 
+        0 -3px 0 #ffffff,
+        0 3px 0 #ffffff;
+    transform: rotate(-10deg);
+}
+
+.whiskers::after {
+    content: '';
+    position: absolute;
+    right: -8px;
+    top: 50%;
+    width: 8px;
+    height: 1px;
+    background-color: #ffffff;
+    box-shadow: 
+        0 -3px 0 #ffffff,
+        0 3px 0 #ffffff;
+    transform: rotate(10deg);
+}
+
 .whiskers {
     position: absolute;
     width: 100%;
@@ -116,33 +146,6 @@ nav a:hover {
     left: 0;
 }
 
-.whiskers::before,
-.whiskers::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    width: 8px;
-    height: 1px;
-    background-color: #ffffff;
-}
-
-/* 左边胡须 */
-.whiskers::before {
-    left: -8px;
-    box-shadow: 
-        0 -3px 0 #ffffff,
-        0 3px 0 #ffffff;
-    transform: rotate(-10deg);
-}
-
-/* 右边胡须 */
-.whiskers::after {
-    right: -8px;
-    box-shadow: 
-        0 -3px 0 #ffffff,
-        0 3px 0 #ffffff;
-    transform: rotate(10deg);
-}
 /* 英雄区样式 */
 .hero {
     min-height: 100vh; /* 使用最小高度 */
