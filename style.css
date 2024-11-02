@@ -169,32 +169,32 @@ nav a:hover {
 }
 
 .venus-orbit {
-    width: 440px;
-    height: 440px;
+    width: 490px;
+    height: 490px;
     animation: rotate 6.5s linear infinite;
 }
 
 .earth-orbit {
-    width: 560px;
-    height: 560px;
+    width: 610px;
+    height: 610px;
     animation: rotate 10s linear infinite;
 }
 
 .mars-orbit {
-    width: 640px;
-    height: 640px;
+    width: 730px;
+    height: 730px;
     animation: rotate 15s linear infinite;
 }
 
 .jupiter-orbit {
-    width: 900px;
-    height: 900px;
+    width: 930px;
+    height: 930px;
     animation: rotate 25s linear infinite;
 }
 
 .saturn-orbit {
-    width: 1280px;
-    height: 1280px;
+    width: 1380px;
+    height: 1380px;
     animation: rotate 35s linear infinite;
 }
 
