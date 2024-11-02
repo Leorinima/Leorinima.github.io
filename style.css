@@ -79,8 +79,7 @@ nav a:hover {
     background-color: #ffffff;
     border-radius: 50%;
     position: relative;
-    margin-right: 0;
-    margin-left: 10px; /* 添加左边距 */
+    margin: 0 0 0 10px; /* 修改边距：上 右 下 左 */
     z-index: 1;
 }
 
@@ -657,7 +656,9 @@ footer {
     }
 
     nav .logo h1 {
-        font-size: 1.2rem;
+        color: var(--white);
+        font-size: 1.5rem;
+        margin: 0; /* 确保标题没有额外的边距 */
     }
 
     nav ul {
