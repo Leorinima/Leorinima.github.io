@@ -181,8 +181,8 @@ nav a:hover {
 }
 
 .mars-orbit {
-    width: 750px;
-    height: 750px;
+    width: 730px;
+    height: 730px;
     animation: rotate 15s linear infinite;
 }
 
