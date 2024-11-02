@@ -67,29 +67,44 @@ nav a:hover {
 }
 
 .logo {
-    display: flex; /* 使用 flexbox 布局 */
-    align-items: center; /* 垂直居中对齐 */
+    display: flex;
+    align-items: center;
+    gap: 10px; /* 添加间距 */
 }
 
 .cat-icon {
-    width: 30px; /* 猫图标的宽度 */
-    height: 30px; /* 猫图标的高度 */
-    background-color: #ff69b4; /* 猫的颜色 */
-    clip-path: polygon(50% 0%, 100% 100%, 0% 100%); /* 创建三角形形状 */
-    position: relative; /* 使得伪元素相对于猫图标定位 */
-    margin-right: 10px; /* 添加右边距 */
+    width: 20px; /* 调整宽度 */
+    height: 20px; /* 调整高度 */
+    background-color: #ff69b4; /* 粉色 */
+    clip-path: polygon(0 50%, 50% 100%, 100% 50%, 50% 0); /* 菱形形状作为猫脸 */
+    position: relative;
+    margin-right: 5px;
 }
 
+/* 添加左耳朵 */
 .cat-icon::before {
-    content: ''; /* 伪元素内容为空 */
-    position: absolute; /* 绝对定位 */
-    top: -10px; /* 调整耳朵位置 */
-    left: 50%; /* 水平居中 */
-    transform: translateX(-50%); /* 使耳朵居中 */
-    width: 20px; /* 耳朵的宽度 */
-    height: 20px; /* 耳朵的高度 */
-    background-color: #ff69b4; /* 耳朵的颜色 */
-    clip-path: polygon(50% 0%, 100% 100%, 0% 100%); /* 创建耳朵的三角形形状 */
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -1px;
+    width: 10px;
+    height: 10px;
+    background-color: #ff69b4;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    transform: rotate(-30deg);
+}
+
+/* 添加右耳朵 */
+.cat-icon::after {
+    content: '';
+    position: absolute;
+    top: -8px;
+    right: -1px;
+    width: 10px;
+    height: 10px;
+    background-color: #ff69b4;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    transform: rotate(30deg);
 }
 
 /* 英雄区样式 */
