@@ -69,7 +69,7 @@ nav a:hover {
 .logo {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 8px;
     flex-direction: row-reverse; /* 改变方向，让图标在右边 */
 }
 
@@ -79,7 +79,7 @@ nav a:hover {
     background-color: #ffffff;
     border-radius: 50%;
     position: relative;
-    margin: 0 0 0 10px; /* 修改边距：上 右 下 左 */
+    margin: 0 0 0 5px; /* 修改边距：上 右 下 左 */
     z-index: 1;
 }
 
