@@ -181,14 +181,14 @@ nav a:hover {
 }
 
 .mars-orbit {
-    width: 730px;
-    height: 730px;
+    width: 750px;
+    height: 750px;
     animation: rotate 15s linear infinite;
 }
 
 .jupiter-orbit {
-    width: 930px;
-    height: 930px;
+    width: 950px;
+    height: 950px;
     animation: rotate 25s linear infinite;
 }
 
