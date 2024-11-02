@@ -433,10 +433,10 @@ nav a:hover {
 }
 
 .hero-content p {
-    font-size: 2rem;  /* 增大字体 */
+    font-size: 4rem;  /* 增大字体 */
     opacity: 0.9;     /* 增加不透明度 */
     font-weight: 500; /* 稍微加粗 */
-    color: #fff;
+    color: #F5F5DC;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
     animation: textPulse 2s ease-in-out infinite;
 }
