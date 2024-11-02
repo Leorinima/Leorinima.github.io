@@ -187,14 +187,14 @@ nav a:hover {
 }
 
 .jupiter-orbit {
-    width: 880px;
-    height: 880px;
+    width: 900px;
+    height: 900px;
     animation: rotate 25s linear infinite;
 }
 
 .saturn-orbit {
-    width: 1080px;
-    height: 1080px;
+    width: 1280px;
+    height: 1280px;
     animation: rotate 35s linear infinite;
 }
 
