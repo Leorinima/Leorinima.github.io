@@ -76,10 +76,10 @@ nav a:hover {
     width: 20px;
     height: 20px;
     background-color: #ffffff;
-    border-radius: 50%; /* 改用圆形作为猫脸 */
+    border-radius: 50%;
     position: relative;
     margin-right: 10px;
-    z-index: 1; /* 确保猫脸在正确的层级 */
+    z-index: 1;
 }
 
 /* 左耳 */
@@ -92,8 +92,8 @@ nav a:hover {
     height: 10px;
     background-color: #ffffff;
     clip-path: polygon(0 100%, 50% 0, 100% 100%);
-    z-index: 2; /* 确保耳朵在猫脸上面 */
-    transform: rotate(-30deg); /* 稍微旋转左耳 */
+    z-index: 2;
+    transform: rotate(-30deg);
 }
 
 /* 右耳 */
@@ -106,8 +106,38 @@ nav a:hover {
     height: 10px;
     background-color: #ffffff;
     clip-path: polygon(0 100%, 50% 0, 100% 100%);
-    z-index: 2; /* 确保耳朵在猫脸上面 */
-    transform: rotate(30deg); /* 稍微旋转右耳 */
+    z-index: 2;
+    transform: rotate(30deg);
+}
+
+/* 左边胡须 */
+.cat-icon::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 50%;
+    width: 8px;
+    height: 1px;
+    background-color: #ffffff;
+    box-shadow: 
+        0 -3px 0 #ffffff,  /* 上胡须 */
+        0 3px 0 #ffffff;   /* 下胡须 */
+    transform: rotate(-10deg);
+}
+
+/* 右边胡须 */
+.cat-icon::after {
+    content: '';
+    position: absolute;
+    right: -8px;
+    top: 50%;
+    width: 8px;
+    height: 1px;
+    background-color: #ffffff;
+    box-shadow: 
+        0 -3px 0 #ffffff,  /* 上胡须 */
+        0 3px 0 #ffffff;   /* 下胡须 */
+    transform: rotate(10deg);
 }
 
 /* 英雄区样式 */
