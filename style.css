@@ -75,7 +75,7 @@ nav a:hover {
 .cat-icon {
     width: 20px;
     height: 20px;
-    background-color: #ffffff; /* 改为白色 */
+    background-color: #ffffff; /* 白色 */
     clip-path: circle(50% at 50% 50%); /* 圆形猫脸 */
     position: relative;
     margin-right: 10px;
@@ -85,28 +85,25 @@ nav a:hover {
 .cat-icon::before {
     content: '';
     position: absolute;
-    top: -6px;
-    left: 2px;
-    width: 8px;
-    height: 8px;
+    top: -8px;
+    left: -2px;
+    width: 10px;
+    height: 10px;
     background-color: #ffffff; /* 白色耳朵 */
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-    transform: rotate(-30deg);
 }
 
 /* 右耳 */
 .cat-icon::after {
     content: '';
     position: absolute;
-    top: -6px;
-    right: 2px;
-    width: 8px;
-    height: 8px;
+    top: -8px;
+    right: -2px;
+    width: 10px;
+    height: 10px;
     background-color: #ffffff; /* 白色耳朵 */
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-    transform: rotate(30deg);
 }
-
 /* 英雄区样式 */
 .hero {
     min-height: 100vh; /* 使用最小高度 */
