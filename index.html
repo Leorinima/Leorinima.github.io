@@ -75,8 +75,7 @@
                     <h3>示例文章标题</h3> <!-- 确保标题正确 -->
                     <p>文章简介...</p>
                     <div class="post-meta">
-                        <span><i class="far fa-calendar"></i> 2024-01-01</span>
-                        <span><i class="far fa-eye"></i> 1000</span>
+                        <span><i class="far fa-calendar"></i> <span class="post-date"></span></span>
                     </div>
                 </div>
             </a>
@@ -132,5 +131,17 @@
             <p>&copy; 2024 Leo和他的猫. All rights reserved.</p>
         </div>
     </footer>
+script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const dateElements = document.querySelectorAll('.post-date');
+        const today = new Date();
+        const formattedDate = today.getFullYear() + '-' + 
+                            String(today.getMonth() + 1).padStart(2, '0') + '-' + 
+                            String(today.getDate()).padStart(2, '0');
+        dateElements.forEach(element => {
+            element.textContent = formattedDate;
+        });
+    });
+</script>
 </body>
 </html>
