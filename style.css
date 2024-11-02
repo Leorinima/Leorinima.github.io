@@ -726,24 +726,25 @@ footer {
     }
 
     .hero-content h1 {
-        font-size: 3rem;
-        margin-bottom: 1rem;
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-        animation: textGlow 2s ease-in-out infinite alternate;
-        /* 添加渐变色文字效果 */
-        background: linear-gradient(
-            45deg,
-            #ff6b6b,
-            #4ecdc4,
-            #45b7d1,
-            #a06cd5
-        );
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      background-size: 300% 300%;
-      animation: gradient 6s ease-in-out infinite, textGlow 2s ease-in-out infinite alternate;
-    }
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    animation: textGlow 2s ease-in-out infinite alternate;
+    
+    /* 添加渐变色文字效果 */
+    background: linear-gradient(
+        45deg,
+        #ff6b6b,
+        #4ecdc4,
+        #45b7d1,
+        #a06cd5
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 300% 300%;
+    animation: gradient 6s ease-in-out infinite, textGlow 2s ease-in-out infinite alternate;
+}
 
 /* 添加渐变动画 */
 @keyframes gradient {
