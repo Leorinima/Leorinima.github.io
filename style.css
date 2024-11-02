@@ -65,6 +65,7 @@ nav a {
 nav a:hover {
     color: var(--primary-color);
 }
+
 .logo {
     display: flex; /* 使用 flexbox 布局 */
     align-items: center; /* 垂直居中对齐 */
@@ -73,7 +74,7 @@ nav a:hover {
 .cat-icon {
     width: 30px; /* 猫图标的宽度 */
     height: 30px; /* 猫图标的高度 */
-    background-color: #000; /* 猫的颜色 */
+    background-color: #ff69b4; /* 猫的颜色 */
     clip-path: polygon(50% 0%, 100% 100%, 0% 100%); /* 创建三角形形状 */
     position: relative; /* 使得伪元素相对于猫图标定位 */
     margin-right: 10px; /* 添加右边距 */
@@ -87,7 +88,7 @@ nav a:hover {
     transform: translateX(-50%); /* 使耳朵居中 */
     width: 20px; /* 耳朵的宽度 */
     height: 20px; /* 耳朵的高度 */
-    background-color: #000; /* 耳朵的颜色 */
+    background-color: #ff69b4; /* 耳朵的颜色 */
     clip-path: polygon(50% 0%, 100% 100%, 0% 100%); /* 创建耳朵的三角形形状 */
 }
 
