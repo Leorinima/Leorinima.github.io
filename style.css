@@ -75,35 +75,41 @@ nav a:hover {
 .cat-icon {
     width: 20px;
     height: 20px;
-    background-color: #ffffff; /* 白色 */
-    clip-path: circle(50% at 50% 50%); /* 圆形猫脸 */
+    background-color: #ffffff;
+    border-radius: 50%; /* 改用圆形作为猫脸 */
     position: relative;
     margin-right: 10px;
+    z-index: 1; /* 确保猫脸在正确的层级 */
 }
 
 /* 左耳 */
 .cat-icon::before {
     content: '';
     position: absolute;
-    top: -8px;
-    left: -2px;
+    top: -6px;
+    left: 0;
     width: 10px;
     height: 10px;
-    background-color: #ffffff; /* 白色耳朵 */
-    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    background-color: #ffffff;
+    clip-path: polygon(0 100%, 50% 0, 100% 100%);
+    z-index: 2; /* 确保耳朵在猫脸上面 */
+    transform: rotate(-30deg); /* 稍微旋转左耳 */
 }
 
 /* 右耳 */
 .cat-icon::after {
     content: '';
     position: absolute;
-    top: -8px;
-    right: -2px;
+    top: -6px;
+    right: 0;
     width: 10px;
     height: 10px;
-    background-color: #ffffff; /* 白色耳朵 */
-    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    background-color: #ffffff;
+    clip-path: polygon(0 100%, 50% 0, 100% 100%);
+    z-index: 2; /* 确保耳朵在猫脸上面 */
+    transform: rotate(30deg); /* 稍微旋转右耳 */
 }
+
 /* 英雄区样式 */
 .hero {
     min-height: 100vh; /* 使用最小高度 */
