@@ -82,7 +82,7 @@ nav a:hover {
     z-index: 1;
 }
 
-/* 耳朵容器 */
+/* 耳朵 */
 .cat-icon::before,
 .cat-icon::after {
     content: '';
@@ -108,26 +108,19 @@ nav a:hover {
 }
 
 /* 添加胡须容器 */
-.cat-icon::after {
+.cat-icon::before {
     content: '';
     position: absolute;
-    left: 0;
-    top: 0;
     width: 100%;
     height: 100%;
-}
-
-/* 添加胡须样式 */
-.cat-icon::after {
-    background: 
-        /* 左边胡须 */
-        linear-gradient(170deg, transparent 45%, #fff 45%, #fff 55%, transparent 55%) -8px 35%/8px 1px no-repeat,
-        linear-gradient(170deg, transparent 45%, #fff 45%, #fff 55%, transparent 55%) -8px 50%/8px 1px no-repeat,
-        linear-gradient(170deg, transparent 45%, #fff 45%, #fff 55%, transparent 55%) -8px 65%/8px 1px no-repeat,
-        /* 右边胡须 */
-        linear-gradient(10deg, transparent 45%, #fff 45%, #fff 55%, transparent 55%) calc(100% + 8px) 35%/8px 1px no-repeat,
-        linear-gradient(10deg, transparent 45%, #fff 45%, #fff 55%, transparent 55%) calc(100% + 8px) 50%/8px 1px no-repeat,
-        linear-gradient(10deg, transparent 45%, #fff 45%, #fff 55%, transparent 55%) calc(100% + 8px) 65%/8px 1px no-repeat;
+    /* 左边胡须 */
+    box-shadow: 
+        -8px 8px 0 -2px #ffffff,  /* 左下胡须 */
+        -8px 10px 0 -2px #ffffff,  /* 左中胡须 */
+        -8px 12px 0 -2px #ffffff,  /* 左上胡须 */
+        8px 8px 0 -2px #ffffff,   /* 右下胡须 */
+        8px 10px 0 -2px #ffffff,   /* 右中胡须 */
+        8px 12px 0 -2px #ffffff;   /* 右上胡须 */
 }
 
 /* 英雄区样式 */
